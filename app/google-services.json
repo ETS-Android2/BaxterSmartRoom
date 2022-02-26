@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "779032153499",
+    "project_id": "baxtersmartroom",
+    "storage_bucket": "baxtersmartroom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779032153499:android:211b0f8a267f3722b4a53e",
+        "android_client_info": {
+          "package_name": "com.example.baxter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779032153499-dnh3j5933hdb4uu4ogid7431co6enq4b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.baxter",
+            "certificate_hash": "e422f3ff1e5195c70e06ed4a44090f30e3b9e3f0"
+          }
+        },
+        {
+          "client_id": "779032153499-46tb5j1a2vc3eeilklpg5ntog7bqdekl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG7auDdI1bYb8eIGqSgapPMTXG0Q4x9_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779032153499-46tb5j1a2vc3eeilklpg5ntog7bqdekl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_main.xml" value="0.132" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_patient1.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump1.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump10.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump11.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump12.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump13.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump14.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump15.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump16.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump2.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump3.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump4.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump5.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump6.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump7.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump8.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump9.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/pump_activity1.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/pump_activity2.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
