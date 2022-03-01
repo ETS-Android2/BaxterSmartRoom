@@ -11,7 +11,7 @@ public class PumpActivity1 extends AppCompatActivity {
 
     RelativeLayout pump1, pump2, pump3, pump4,
             pump5, pump6, pump7, pump8;
-    Button forward;
+    Button forward, home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,8 @@ public class PumpActivity1 extends AppCompatActivity {
         pump6 = findViewById(R.id.pump6);
         pump7 = findViewById(R.id.pump7);
         pump8 = findViewById(R.id.pump8);
-        forward = findViewById(R.id.forwardbutton);
+        forward = findViewById(R.id.ForwardButton);
+        home = findViewById(R.id.HomeButton);
 
         pump1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +97,14 @@ public class PumpActivity1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PumpActivity1.this, PumpActivity2.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PumpActivity1.this, PatientActivity1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }

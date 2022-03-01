@@ -42,13 +42,13 @@
 
                         <ImageView
                             android:id="@+id/imgView1"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
-                            android:scaleType="centerInside"
-                            app:tint="@color/white" />
+                            android:src="@drawable/pump"
+                            android:scaleType="centerInside" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -80,13 +80,13 @@
 
                         <ImageView
                             android:id="@+id/imgView2"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            app:tint="@color/white" />
+                            android:src="@drawable/pump" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -126,13 +126,13 @@
 
                         <ImageView
                             android:id="@+id/imgView3"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            app:tint="@color/white" />
+                            android:src="@drawable/pump"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -164,13 +164,13 @@
 
                         <ImageView
                             android:id="@+id/imgView4"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            app:tint="@color/white" />
+                            android:src="@drawable/pump" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -210,13 +210,13 @@
 
                         <ImageView
                             android:id="@+id/imgView5"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            app:tint="@color/white" />
+                            android:src="@drawable/pump"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -248,13 +248,13 @@
 
                         <ImageView
                             android:id="@+id/imgView6"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            app:tint="@color/white" />
+                            android:src="@drawable/pump"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -294,13 +294,13 @@
 
                         <ImageView
                             android:id="@+id/imgView7"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            app:tint="@color/white" />
+                            android:src="@drawable/pump" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -332,14 +332,13 @@
 
                         <ImageView
                             android:id="@+id/imgView8"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-
-                            app:tint="@color/white" />
+                            android:src="@drawable/pump"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -357,11 +356,43 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/forwardbutton"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Next Page" />
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:padding="2dp">
+
+                    <Button
+                        android:id="@+id/ForwardButton"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:text="Next Page"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="5dp">
+
+                    <Button
+                        android:id="@+id/HomeButton"
+                        android:layout_width="80dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:text="Home"/>
+
+                </RelativeLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
