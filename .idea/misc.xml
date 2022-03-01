@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_login.xml" value="0.2546875" />
         <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_main.xml" value="0.132" />
         <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_patient1.xml" value="0.2546875" />
         <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump1.xml" value="0.22826086956521738" />
@@ -21,6 +22,7 @@
         <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump7.xml" value="0.2546875" />
         <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump8.xml" value="0.2546875" />
         <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_pump9.xml" value="0.2546875" />
+        <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/activity_splash.xml" value="0.240625" />
         <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/pump_activity1.xml" value="0.2546875" />
         <entry key="..\:/Users/Dave's PC/AndroidStudioProjects/Baxter/app/src/main/res/layout/pump_activity2.xml" value="0.2" />
       </map>

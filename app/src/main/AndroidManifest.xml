@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Baxter">
         <activity
-            android:name="com.example.baxter.PatientActivity1"
+            android:name=".Splash"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -19,61 +19,68 @@
         </intent-filter>
         </activity>
         <activity
-            android:name="com.example.baxter.Pump16"
-            android:exported="false" />
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
         <activity
-            android:name="com.example.baxter.Pump15"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump14"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump13"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump12"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump11"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump10"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump9"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.PumpActivity2"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump8"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump7"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump6"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump5"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump4"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump3"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump2"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.Pump1"
-            android:exported="false" />
-        <activity
-            android:name="com.example.baxter.PumpActivity1"
+            android:name=".PatientActivity1"
             android:exported="false">
 
         </activity>
+        <activity
+            android:name=".Pump16"
+            android:exported="false" />
+        <activity
+            android:name=".Pump15"
+            android:exported="false" />
+        <activity
+            android:name=".Pump14"
+            android:exported="false" />
+        <activity
+            android:name=".Pump13"
+            android:exported="false" />
+        <activity
+            android:name=".Pump12"
+            android:exported="false" />
+        <activity
+            android:name=".Pump11"
+            android:exported="false" />
+        <activity
+            android:name=".Pump10"
+            android:exported="false" />
+        <activity
+            android:name=".Pump9"
+            android:exported="false" />
+        <activity
+            android:name=".PumpActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Pump8"
+            android:exported="false" />
+        <activity
+            android:name=".Pump7"
+            android:exported="false" />
+        <activity
+            android:name=".Pump6"
+            android:exported="false" />
+        <activity
+            android:name=".Pump5"
+            android:exported="false" />
+        <activity
+            android:name=".Pump4"
+            android:exported="false" />
+        <activity
+            android:name=".Pump3"
+            android:exported="false" />
+        <activity
+            android:name=".Pump2"
+            android:exported="false" />
+        <activity
+            android:name=".Pump1"
+            android:exported="false" />
+        <activity
+            android:name=".PumpActivity1"
+            android:exported="false" />
     </application>
 
 </manifest>
