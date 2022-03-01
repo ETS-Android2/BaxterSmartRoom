@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PumpActivity1 extends AppCompatActivity {
+public class PumpActivity1 extends SwipeActivity {
 
     RelativeLayout pump1, pump2, pump3, pump4,
             pump5, pump6, pump7, pump8;
@@ -109,5 +109,18 @@ public class PumpActivity1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onSwipeRight() {
+
+    }
+
+    @Override
+    protected void onSwipeLeft() {
+        Intent intent = new Intent(PumpActivity1.this, PumpActivity2.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+
     }
 }
