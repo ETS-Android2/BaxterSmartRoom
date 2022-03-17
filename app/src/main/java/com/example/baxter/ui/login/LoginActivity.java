@@ -23,8 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.baxter.PatientActivity1;
-import com.example.baxter.PumpActivity1;
+import com.example.baxter.CareArea;
 import com.example.baxter.R;
 import com.example.baxter.ui.login.LoginViewModel;
 import com.example.baxter.ui.login.LoginViewModelFactory;
@@ -131,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
         String welcome = getString(R.string.welcome) + model.getDisplayName() + "!";
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(LoginActivity.this, PatientActivity1.class);
+        Intent intent = new Intent(LoginActivity.this, CareArea.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
         finish();
