@@ -11,7 +11,7 @@ public class PumpActivity2 extends SwipeActivity {
 
     RelativeLayout pump9, pump10, pump11, pump12,
             pump13, pump14, pump15, pump16;
-    Button back;
+    Button back, home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class PumpActivity2 extends SwipeActivity {
         pump15 = findViewById(R.id.pump15);
         pump16 = findViewById(R.id.pump16);
         back = findViewById(R.id.backbutton);
+        home = findViewById(R.id.Home);
 
         pump9.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +98,14 @@ public class PumpActivity2 extends SwipeActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PumpActivity2.this, PumpActivity1.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PumpActivity2.this, PatientActivity1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }

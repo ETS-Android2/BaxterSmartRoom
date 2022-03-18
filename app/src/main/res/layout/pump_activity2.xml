@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.baxter.PumpActivity1">
+    tools:context="com.example.baxter.PumpActivity2">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -371,7 +371,7 @@
                     android:padding="2dp">
 
                     <Button
-                        android:id="@+id/BackButton"
+                        android:id="@+id/backbutton"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_centerVertical="true"
