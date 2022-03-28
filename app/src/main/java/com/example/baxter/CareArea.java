@@ -11,14 +11,14 @@ import android.widget.Spinner;
 
 public class CareArea extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Spinner spinner;
-    private static final String[] paths = {"Pediatrics", "General Surgery", "Cardiovascular"};
+    private static final String[] paths = {"Care Area", "Pediatrics", "General Surgery", "Cardiovascular"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_care_area);
 
-        spinner = (Spinner) findViewById(R.id.dropdown);
+        spinner = findViewById(R.id.dropdown);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(CareArea.this,
                 android.R.layout.simple_spinner_item, paths);
 
@@ -33,17 +33,24 @@ public class CareArea extends AppCompatActivity implements AdapterView.OnItemSel
 
         switch (position) {
             case 0:
-                Intent intent = new Intent(CareArea.this, PumpActivity1.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
                 break;
             case 1:
-                // Whatever you want to happen when the second item gets selected
+                Intent intentc1 = new Intent(CareArea.this, PatientActivity1.class);
+                intentc1.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intentc1);
                 break;
             case 2:
-                // Whatever you want to happen when the thrid item gets selected
+                Intent intentc2 = new Intent(CareArea.this, PatientActivity2.class);
+                intentc2.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intentc2);
+                // Whatever you want to happen when the third item gets selected
                 break;
-
+            case 3:
+                Intent intentc3 = new Intent(CareArea.this, PatientActivity3.class);
+                intentc3.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intentc3);
+                // Whatever you want to happen when the third item gets selected
+                break;
         }
     }
 

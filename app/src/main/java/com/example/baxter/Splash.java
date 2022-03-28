@@ -18,7 +18,7 @@ private  static int SPLASH_TIME_OUT = 2000;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Splash.this, LoginActivity.class);
+                Intent intent = new Intent(Splash.this, Login.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();

@@ -17,8 +17,6 @@ public class PatientActivity1 extends AppCompatActivity {
         pt2 = findViewById(R.id.pt2);
         pt3 = findViewById(R.id.pt3);
         pt4 = findViewById(R.id.pt4);
-
-
         pt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
