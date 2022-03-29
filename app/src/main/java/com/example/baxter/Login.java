@@ -73,18 +73,24 @@ public class Login extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     String passwordFromDB = snapshot.child(userEnteredUsername).child("password").getValue(String.class);
-                    if(passwordFromDB.equals(userEnteredPassword)){
+                    if (passwordFromDB.equals(userEnteredPassword)) {
                         String name = snapshot.child(userEnteredUsername).child("name").getValue(String.class);
+                        String patient = snapshot.child(userEnteredUsername).child("patients").getValue(String.class);
+                        Intent intent2 = new Intent(getApplicationContext(), PatientActivity1.class);
+                        intent2.putExtra("name", name);
+                        intent2.putExtra("patients", patient);
+                        intent2.putExtra("user", userEnteredUsername);
                         Toast.makeText(Login.this, "Welcome" + name, Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(Login.this, CareArea.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                        startActivity(intent);
+                        intent2.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent2);
                         finish();
+                    } else {
+                        password.setError("Wrong Password");
                     }
-
+                } else {
+                    username.setError("No such User exist");
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }

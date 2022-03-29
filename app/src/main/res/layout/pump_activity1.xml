@@ -360,7 +360,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2">
+                android:weightSum="3">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -374,22 +374,38 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_centerVertical="true"
-                        android:text="Next Page"/>
+                        android:text="Next Page"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="2dp">
+
+                    <Button
+                        android:id="@+id/HomeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:text="Home"/>
+
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="5dp">
+                    android:padding="2dp">
 
                     <Button
-                        android:id="@+id/HomeButton"
+                        android:id="@+id/BackButton"
                         android:layout_width="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_height="40dp"
                         android:layout_centerVertical="true"
-                        android:text="Home"/>
+                        android:text="Next Page"/>
 
                 </RelativeLayout>
             </LinearLayout>
