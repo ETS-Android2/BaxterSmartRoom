@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.example.baxter.ui.login.LoginActivity;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +15,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.core.view.View;
 
 public class Login extends AppCompatActivity {
     Button login;
@@ -31,12 +28,13 @@ public class Login extends AppCompatActivity {
         username.findViewById(R.id.username);
         password.findViewById(R.id.password);
         login.findViewById(R.id.login);
-        login.setOnClickListener(new android.view.View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(android.view.View view) {
+            public void onClick(View view) {
                 loginStart();
             }
         });
+
 
     }
 
@@ -49,7 +47,6 @@ public class Login extends AppCompatActivity {
 
     private Boolean validateUsername() {
         String val = username.getEditText().getText().toString();
-        String noWhiteSpace = "\\A\\w(4,20)\\z";
         if (val.isEmpty()) {
             username.setError("Field cannot be empty");
             return false;
@@ -62,7 +59,6 @@ public class Login extends AppCompatActivity {
 
     private Boolean validatePassword() {
         String val = password.getEditText().getText().toString();
-        String noWhiteSpace = "\\A\\w(4,20)\\z";
         if (val.isEmpty()) {
             password.setError("Field cannot be empty");
             return false;
