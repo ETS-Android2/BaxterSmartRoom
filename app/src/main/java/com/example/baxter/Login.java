@@ -93,7 +93,7 @@ public class Login extends AppCompatActivity {
                     String passwordFromDB = snapshot.child(userEnteredUsername).child("password").getValue(String.class);
                     if (passwordFromDB.equals(userEnteredPassword)) {
                         String name = snapshot.child(userEnteredUsername).child("name").getValue(String.class);
-                        String patient = snapshot.child(userEnteredUsername).child("patients").getValue(String.class);
+                        String patient = snapshot.child(userEnteredUsername).child("n_patients").getValue(String.class);
                         Intent intent2 = new Intent(getApplicationContext(), PatientActivity1.class);
                         intent2.putExtra("name", name);
                         intent2.putExtra("patients", patient);

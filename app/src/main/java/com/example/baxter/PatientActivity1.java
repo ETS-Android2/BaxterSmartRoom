@@ -20,7 +20,7 @@ public class PatientActivity1 extends AppCompatActivity {
     RelativeLayout Patient1, Patient2, Patient3, Patient4, Patient5, Patient6, Patient7, Patient8;
     TextView pt1age,pt1name,pt1sex,pt2age,pt2name,pt2sex,pt5age,pt5name,pt5sex,pt3age,pt3name,pt3sex,
             pt4age,pt4name,pt4sex,pt6age,pt6name,pt6sex,pt7age,pt7name,pt7sex,pt8age,pt8name,pt8sex;
-
+    String pump;
     Button fwdbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,19 +72,7 @@ public class PatientActivity1 extends AppCompatActivity {
         fwdbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("key",key);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        Patient1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                Intent intent = new Intent(PatientActivity1.this, PatientActivity2.class);
                 intent.putExtra("name", name);
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
@@ -94,8 +82,217 @@ public class PatientActivity1 extends AppCompatActivity {
             }
         });
 
+        Patient1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                        .child(key).child(user).child("careArea").child("1");
+                reference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("name", name);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Patient2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                        .child(key).child(user).child("careArea").child("2");
+                reference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("name", name);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Patient3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                        .child(key).child(user).child("careArea").child("3");
+                reference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("name", name);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Patient4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                        .child(key).child(user).child("careArea").child("4");
+                reference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("name", name);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Patient5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                        .child(key).child(user).child("careArea").child("5");
+                reference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("name", name);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Patient6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                        .child(key).child(user).child("careArea").child("6");
+                reference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("name", name);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Patient7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                        .child(key).child(user).child("careArea").child("7");
+                reference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("name", name);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Patient8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                        .child(key).child(user).child("careArea").child("8");
+                reference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("name", name);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users")
-                .child(key).child(user).child("pediatrics");
+                .child(key).child(user).child("careArea");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
