@@ -22,6 +22,7 @@ import com.google.firebase.database.core.view.View;
 public class Login extends AppCompatActivity {
     Button login;
     TextInputLayout username, password;
+    String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,22 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login2);
         username.findViewById(R.id.username);
         password.findViewById(R.id.password);
+        login.findViewById(R.id.login);
+        login.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View view) {
+                loginStart();
+            }
+        });
+
     }
+
+    private void loginStart() {
+        if (validatePassword() && validateUsername()) {
+            isUser();
+        }
+    }
+
 
     private Boolean validateUsername() {
         String val = username.getEditText().getText().toString();
@@ -56,18 +72,24 @@ public class Login extends AppCompatActivity {
             return true;
         }
     }
-    public void loginUser(View view) {
-        //validate login info
-        if (validatePassword() && validateUsername()) {
-            isUser();
-        }
-    }
 
     private void isUser() {
         String userEnteredUsername = username.getEditText().getText().toString().trim();
         String userEnteredPassword = password.getEditText().getText().toString().trim();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user");
-        Query checkUser = reference.orderByChild("username").equalTo(userEnteredPassword);
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot1) {
+                key = snapshot1.getKey();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("user").child(key);
+        Query checkUser = reference2.orderByChild("username").equalTo(userEnteredPassword);
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -80,6 +102,7 @@ public class Login extends AppCompatActivity {
                         intent2.putExtra("name", name);
                         intent2.putExtra("patients", patient);
                         intent2.putExtra("user", userEnteredUsername);
+                        intent2.putExtra("key", key);
                         Toast.makeText(Login.this, "Welcome" + name, Toast.LENGTH_LONG).show();
                         intent2.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(intent2);

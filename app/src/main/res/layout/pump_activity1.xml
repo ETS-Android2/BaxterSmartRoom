@@ -24,14 +24,14 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/pump1"
+                    android:id="@+id/Pump1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_weight="0.60"
-                    android:background="@color/red"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -40,23 +40,35 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView1"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                        <TextView
+                            android:id="@+id/Pump1Drug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:src="@drawable/pump"
+                            android:text="Pump 1 Drug"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
                             android:scaleType="centerInside" />
-
                         <TextView
+                            android:id="@+id/Pump1Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView1"
+                            android:layout_below="@+id/Pump1Drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 1"
+                            android:text="Pump 1 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump1StartVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump1Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 1 StartVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -65,91 +77,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/pump2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.60"
-                    android:background="@color/yellow"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true">
-
-                        <ImageView
-                            android:id="@+id/imgView2"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/pump" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView2"
-                            android:layout_centerHorizontal="true"
-                            android:text="Pump 2"
-                            android:textColor="@color/white"
-                            android:layout_marginTop="5dp"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1">
-
-                <RelativeLayout
-                    android:id="@+id/pump3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.60"
-                    android:background="@color/lime"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true">
-
-                        <ImageView
-                            android:id="@+id/imgView3"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/pump"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView3"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Pump 3"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/pump4"
+                    android:id="@+id/Pump2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -162,24 +90,37 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/pump" />
-
                         <TextView
+                            android:id="@+id/Pump2Drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView4"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 4"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 2 Drug"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump2Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump2Drug"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
+                            android:text="Pump 2 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump2StartVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump2Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 2 StartVolume"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
                     </RelativeLayout>
@@ -195,11 +136,11 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/pump5"
+                    android:id="@+id/Pump3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/blue"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -208,24 +149,37 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView5"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/pump"/>
-
                         <TextView
+                            android:id="@+id/Pump3Drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView5"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 5"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 3 Drug"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump3Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump3Drug"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
+                            android:text="Pump 2 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump3StartVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump3Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 3 StartVolume"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
                     </RelativeLayout>
@@ -233,11 +187,11 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/pump6"
+                    android:id="@+id/Pump4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/darkblue"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -246,24 +200,37 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView6"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/pump"/>
-
                         <TextView
+                            android:id="@+id/Pump4Drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView6"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 6"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 4 Drug"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump4Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump4Drug"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
+                            android:text="Pump 4 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump4StartVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump4Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 4 StartVolume"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
                     </RelativeLayout>
@@ -279,11 +246,11 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/pump7"
+                    android:id="@+id/Pump5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/darkviolet"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -292,24 +259,37 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView7"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/pump" />
-
                         <TextView
+                            android:id="@+id/Pump5Drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView7"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 7"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 5 Drug"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump5Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump5Drug"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
+                            android:text="Pump 2 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump5StartVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump5Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 2 StartVolume"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
                     </RelativeLayout>
@@ -317,11 +297,11 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/pump8"
+                    android:id="@+id/Pump6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/violet"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -330,26 +310,148 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView8"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/pump"/>
-
                         <TextView
+                            android:id="@+id/Pump6Drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView8"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 8"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 6 Drug"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump6Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump6Drug"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
+                            android:text="Pump 6 Rate"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/Pump6StartVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump6Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 6 StartVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/Pump7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.60"
+                    android:background="@color/green"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/Pump7Drug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 7 Drug"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump7Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump7Drug"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 7 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump7StartVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump7Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 7 StartVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Pump8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.60"
+                    android:background="@color/green"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/Pump8Drug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 8 Drug"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump8Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump8Drug"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 8 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump8StartVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump8Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 2 StartVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -360,7 +462,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:weightSum="2">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -377,42 +479,14 @@
                         android:text="Next Page"
                         />
                 </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="2dp">
 
-                    <Button
-                        android:id="@+id/HomeButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_centerInParent="true"
-                        android:layout_centerVertical="true"
-                        android:text="Home"/>
 
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="2dp">
-
-                    <Button
-                        android:id="@+id/BackButton"
-                        android:layout_width="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_height="40dp"
-                        android:layout_centerVertical="true"
-                        android:text="Next Page"/>
-
-                </RelativeLayout>
             </LinearLayout>
 
         </LinearLayout>
 
     </RelativeLayout>
+
 
 
 </RelativeLayout>

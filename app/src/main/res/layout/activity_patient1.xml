@@ -31,7 +31,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/blue"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -140,7 +140,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/red"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -191,7 +191,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/violet"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -250,7 +250,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/darkblue"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -301,7 +301,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/orange"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -360,7 +360,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/yellow"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -411,7 +411,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/teal"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 

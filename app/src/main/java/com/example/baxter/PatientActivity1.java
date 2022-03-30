@@ -64,6 +64,7 @@ public class PatientActivity1 extends AppCompatActivity {
         String name = grabdata.getStringExtra("name");
         String patient = grabdata.getStringExtra("patients");
         String user = grabdata.getStringExtra("user");
+        String key = grabdata.getStringExtra("key");
         int patients = Integer.parseInt(patient);
         if (patients <= 8) {
             fwdbutton.setEnabled(false);
@@ -75,6 +76,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
                 intent.putExtra("name", name);
                 intent.putExtra("user",user);
+                intent.putExtra("key",key);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
@@ -86,14 +88,15 @@ public class PatientActivity1 extends AppCompatActivity {
                 Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
                 intent.putExtra("name", name);
                 intent.putExtra("user",user);
+                intent.putExtra("key",key);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
             }
         });
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user")
-                .child(name).child("pediatrics");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users")
+                .child(key).child(user).child("pediatrics");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
