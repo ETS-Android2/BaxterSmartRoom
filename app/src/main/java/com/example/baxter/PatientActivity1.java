@@ -20,7 +20,7 @@ public class PatientActivity1 extends AppCompatActivity {
     RelativeLayout Patient1, Patient2, Patient3, Patient4, Patient5, Patient6, Patient7, Patient8;
     TextView pt1age,pt1name,pt1sex,pt2age,pt2name,pt2sex,pt5age,pt5name,pt5sex,pt3age,pt3name,pt3sex,
             pt4age,pt4name,pt4sex,pt6age,pt6name,pt6sex,pt7age,pt7name,pt7sex,pt8age,pt8name,pt8sex;
-    String pump;
+    String patient, user, key, pump1,pump2,pump3,pump4,pump5,pump6,pump7,pump8;
     Button fwdbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,243 +60,14 @@ public class PatientActivity1 extends AppCompatActivity {
         pt8sex=findViewById(R.id.pt8sex);
         fwdbutton = findViewById(R.id.ForwardButton);
         Intent grabdata = getIntent();
-        String name = grabdata.getStringExtra("name");
-        String patient = grabdata.getStringExtra("patients");
-        String user = grabdata.getStringExtra("user");
-        String key = grabdata.getStringExtra("key");
+        patient = grabdata.getStringExtra("patients");
+        user = grabdata.getStringExtra("user");
+        key = grabdata.getStringExtra("key");
         int patients = Integer.parseInt(patient);
         if (patients <= 8) {
             fwdbutton.setEnabled(false);
             fwdbutton.setVisibility(View.GONE);
         }
-        fwdbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PatientActivity1.this, PatientActivity2.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("key",key);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        Patient1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
-                        .child(key).child(user).child("careArea").child("1");
-                reference2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue().toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("ptindex","1");
-                intent.putExtra("key",key);
-                intent.putExtra("Pump",pump);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        Patient2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
-                        .child(key).child(user).child("careArea").child("2");
-                reference2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue().toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("key",key);
-                intent.putExtra("Pump",pump);
-                intent.putExtra("ptindex","2");
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        Patient3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
-                        .child(key).child(user).child("careArea").child("3");
-                reference2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue().toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("ptindex","3");
-                intent.putExtra("key",key);
-                intent.putExtra("Pump",pump);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        Patient4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
-                        .child(key).child(user).child("careArea").child("4");
-                reference2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue().toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("key",key);
-                intent.putExtra("ptindex","4");
-                intent.putExtra("Pump",pump);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        Patient5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
-                        .child(key).child(user).child("careArea").child("5");
-                reference2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue().toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("key",key);
-                intent.putExtra("Pump",pump);
-                intent.putExtra("ptindex","5");
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        Patient6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
-                        .child(key).child(user).child("careArea").child("6");
-                reference2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue().toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("key",key);
-                intent.putExtra("Pump",pump);
-                intent.putExtra("ptindex","6");
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        Patient7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
-                        .child(key).child(user).child("careArea").child("7");
-                reference2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue().toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("key",key);
-                intent.putExtra("Pump",pump);
-                intent.putExtra("ptindex","7");
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        Patient8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
-                        .child(key).child(user).child("careArea").child("8");
-                reference2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue().toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-                intent.putExtra("name", name);
-                intent.putExtra("user",user);
-                intent.putExtra("key",key);
-                intent.putExtra("ptindex",8);
-                intent.putExtra("Pump",pump);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users")
                 .child(key).child(user).child("careArea");
         reference.addValueEventListener(new ValueEventListener() {
@@ -306,6 +77,7 @@ public class PatientActivity1 extends AppCompatActivity {
                     String pt1namestr = snapshot.child("1").child("name").getValue(String.class);
                     String pt1agestr = snapshot.child("1").child("age").getValue().toString();
                     String pt1sexstr = snapshot.child("1").child("sex").getValue(String.class);
+                    pump1 = snapshot.child("1").child("n_pumps").getValue().toString();
                     pt1age.setText(pt1agestr);
                     pt1name.setText(pt1namestr);
                     pt1sex.setText(pt1sexstr);
@@ -316,6 +88,7 @@ public class PatientActivity1 extends AppCompatActivity {
                     String pt2sexstr = snapshot.child("2").child("sex").getValue(String.class);
                     pt2age.setText(pt2agestr);
                     pt2name.setText(pt2namestr);
+                    pump2 = snapshot.child("2").child("n_pumps").getValue().toString();
                     pt2sex.setText(pt2sexstr);
                 }
                 if (patients >=3){
@@ -325,6 +98,7 @@ public class PatientActivity1 extends AppCompatActivity {
                     pt3age.setText(pt3agestr);
                     pt3name.setText(pt3namestr);
                     pt3sex.setText(pt3sexstr);
+                    pump3 = snapshot.child("3").child("n_pumps").getValue().toString();
                 }
                 if (patients >=4){
                     String pt4namestr = snapshot.child("4").child("name").getValue(String.class);
@@ -333,6 +107,7 @@ public class PatientActivity1 extends AppCompatActivity {
                     pt4age.setText(pt4agestr);
                     pt4name.setText(pt4namestr);
                     pt4sex.setText(pt4sexstr);
+                    pump4 = snapshot.child("4").child("n_pumps").getValue().toString();
                 }
                 if (patients >=5){
                     String pt5namestr = snapshot.child("5").child("name").getValue(String.class);
@@ -341,6 +116,7 @@ public class PatientActivity1 extends AppCompatActivity {
                     pt5age.setText(pt5agestr);
                     pt5name.setText(pt5namestr);
                     pt5sex.setText(pt5sexstr);
+                    pump5 = snapshot.child("5").child("n_pumps").getValue().toString();
                 }
                 if (patients >=6){
                     String pt6namestr = snapshot.child("6").child("name").getValue(String.class);
@@ -349,6 +125,7 @@ public class PatientActivity1 extends AppCompatActivity {
                     pt6age.setText(pt6agestr);
                     pt6name.setText(pt6namestr);
                     pt6sex.setText(pt6sexstr);
+                    pump6 = snapshot.child("6").child("n_pumps").getValue().toString();
                 }
                 if (patients >=7){
                     String pt7namestr = snapshot.child("7").child("name").getValue(String.class);
@@ -356,6 +133,7 @@ public class PatientActivity1 extends AppCompatActivity {
                     String pt7sexstr = snapshot.child("7").child("sex").getValue(String.class);
                     pt7age.setText(pt7agestr);
                     pt7name.setText(pt7namestr);
+                    pump7 = snapshot.child("7").child("n_pumps").getValue().toString();
                     pt7sex.setText(pt7sexstr);
                 }
                 if (patients ==8){
@@ -363,20 +141,146 @@ public class PatientActivity1 extends AppCompatActivity {
                 String pt8agestr = snapshot.child("8").child("age").getValue().toString();
                 String pt8sexstr = snapshot.child("8").child("sex").getValue(String.class);
                 pt8age.setText(pt8agestr);
+                pump8 = snapshot.child("8").child("n_pumps").getValue().toString();
                 pt8name.setText(pt8namestr);
                 pt8sex.setText(pt8sexstr);
                 }
-
-
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+        clickListen();
+    }
 
+    private void clickListen() {
+        fwdbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PatientActivity1.this, PatientActivity2.class);
 
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+        Patient1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("user",user);
+                intent.putExtra("ptindex","1");
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump1);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+        Patient2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump2);
+                intent.putExtra("ptindex","2");
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+        Patient3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("user",user);
+                intent.putExtra("ptindex","3");
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump3);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+        Patient4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("ptindex","4");
+                intent.putExtra("Pump",pump4);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent); finish();
+
+            }
+        });
+        Patient5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump5);
+                intent.putExtra("ptindex","5");
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent); finish();
+
+            }
+        });
+        Patient6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+
+                intent.putExtra("user", user);
+                intent.putExtra("key", key);
+                intent.putExtra("Pump", pump6);
+                intent.putExtra("ptindex", "6");
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+        Patient7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("Pump",pump7);
+                intent.putExtra("ptindex","7");
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent); finish();
+
+            }
+        });
+        Patient8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
+
+                intent.putExtra("user",user);
+                intent.putExtra("key",key);
+                intent.putExtra("ptindex",8);
+                intent.putExtra("Pump",pump8);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+
+            }
+        });
     }
 }

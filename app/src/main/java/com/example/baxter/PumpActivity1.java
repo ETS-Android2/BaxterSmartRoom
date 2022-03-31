@@ -2,6 +2,7 @@ package com.example.baxter;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -18,8 +19,8 @@ public class PumpActivity1 extends SwipeActivity {
     TextView Pump1Rate,Pump1drug,Pump1StartVolume,Pump2Rate,Pump2drug,Pump2StartVolume,Pump5Rate,Pump5drug,Pump5StartVolume,Pump3Rate,Pump3drug,Pump3StartVolume,
             Pump4Rate,Pump4drug,Pump4StartVolume,Pump6Rate,Pump6drug,Pump6StartVolume,Pump7Rate,Pump7drug,Pump7StartVolume,Pump8Rate,Pump8drug,Pump8StartVolume;
 
-    Button fwdbutton;
-    String user, key, alarm1, alarm_severity1, alarm_text1, Pump1drugstr, Pump1Ratestr, Pump1startVolume, Pump1ID,
+    Button fwdbutton, homebutton;
+    String patient, Pumpp, user, key, alarm1, alarm_severity1, alarm_text1, Pump1drugstr, Pump1Ratestr, Pump1startVolume, Pump1ID,
             alarm2, alarm_severity2, alarm_text2, Pump2drugstr, Pump2Ratestr, Pump2startVolume, Pump2ID
             , alarm3, alarm_severity3, alarm_text3, Pump3drugstr, Pump3Ratestr, Pump3startVolume, Pump3ID
             , alarm4, alarm_severity4, alarm_text4, Pump4drugstr, Pump4Ratestr, Pump4startVolume, Pump4ID
@@ -68,22 +69,35 @@ public class PumpActivity1 extends SwipeActivity {
         Pump8StartVolume = findViewById(R.id.Pump8startVolume);
         
         fwdbutton = findViewById(R.id.ForwardButton);
+        homebutton = findViewById(R.id.HomeButton);
         data();
         clickListen();
     }
 
     private void data() {
         Intent grabdata = getIntent();
-        String user = grabdata.getStringExtra("user");
-        String Pumpp = grabdata.getStringExtra("Pump");
-        String key = grabdata.getStringExtra("key");
+        user = grabdata.getStringExtra("user");
+        Pumpp = grabdata.getStringExtra("Pump");
+        key = grabdata.getStringExtra("key");
         String ptindex = grabdata.getStringExtra("ptindex");
         int Pumps = Integer.parseInt(Pumpp);
         if (Pumps <= 8) {
             fwdbutton.setEnabled(false);
             fwdbutton.setVisibility(View.GONE);
         }
+        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users").child(key);
+        reference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                patient = snapshot.child(user).child("n_patients").getValue().toString();
 
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users")
                 .child(key).child(user).child("careArea").child(ptindex).child("pumps");
@@ -91,11 +105,9 @@ public class PumpActivity1 extends SwipeActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (Pumps >= 1) {
-                    //setting text
-                    String Pump1drugstr = snapshot.child(ptindex).child("drug").getValue(String.class);
-                    String Pump1Ratestr = snapshot.child(ptindex).child("currentRate").getValue().toString();
-                    ;
-                    String Pump1startVolumestr = snapshot.child(ptindex).child("startVolume").getValue().toString();
+                    String Pump1drugstr = snapshot.child("1").child("drug").getValue(String.class);
+                    String Pump1Ratestr = snapshot.child("1").child("currentRate").getValue().toString();
+                    String Pump1startVolumestr = snapshot.child("1").child("startVolume").getValue().toString();
                     Pump1Rate.setText(Pump1Ratestr);
                     Pump1drug.setText(Pump1drugstr);
                     Pump1StartVolume.setText(Pump1startVolumestr);
@@ -105,7 +117,7 @@ public class PumpActivity1 extends SwipeActivity {
                     Pump1ID = snapshot.child("1").child("pumpID").getValue().toString();
                     alarm_text1 = snapshot.child("1").child("alarm_text").getValue(String.class);
                     //setting colors
-                    String color1 = snapshot.child(ptindex).child("alarm_severity").getValue().toString();
+                    String color1 = snapshot.child("1").child("alarm_severity").getValue().toString();
                     int colors1 = Integer.parseInt(color1);
                     if (colors1 == 1) {
                         Pump1.setBackgroundResource(R.color.yellow);
@@ -163,7 +175,8 @@ public class PumpActivity1 extends SwipeActivity {
                         Pump3.setBackgroundResource(R.color.green);
                     }
                 }
-                if (Pumps >= 4){ String Pump4drugstr = snapshot.child("4").child("drug").getValue(String.class);
+                if (Pumps >= 4){
+                    String Pump4drugstr = snapshot.child("4").child("drug").getValue(String.class);
                     String Pump4Ratestr = snapshot.child("4").child("currentRate").getValue().toString();
                     String Pump4startVolumestr = snapshot.child("4").child("startVolume").getValue().toString();
                     Pump4Rate.setText(Pump4Ratestr);
@@ -374,7 +387,6 @@ public class PumpActivity1 extends SwipeActivity {
                 startActivity(intent);
             }
         });
-        /*
         Pump6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -426,14 +438,24 @@ public class PumpActivity1 extends SwipeActivity {
                 startActivity(intent);
             }
         });
-
-         */
         fwdbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PumpActivity1.this, PumpActivity2.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
+            }
+        });
+        homebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PumpActivity1.this, PatientActivity1.class);
+                intent.putExtra("patients", patient);
+                intent.putExtra("user", user);
+                intent.putExtra("key", key);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
             }
         });
 
