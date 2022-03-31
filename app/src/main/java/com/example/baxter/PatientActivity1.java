@@ -81,16 +81,15 @@ public class PatientActivity1 extends AppCompatActivity {
                 finish();
             }
         });
-
         Patient1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
                         .child(key).child(user).child("careArea").child("1");
                 reference2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                        String pump = snapshot.child("n_pumps").getValue().toString();
                     }
 
                     @Override
@@ -101,6 +100,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
                 intent.putExtra("name", name);
                 intent.putExtra("user",user);
+                intent.putExtra("ptindex","1");
                 intent.putExtra("key",key);
                 intent.putExtra("Pump",pump);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -111,12 +111,12 @@ public class PatientActivity1 extends AppCompatActivity {
         Patient2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
                         .child(key).child(user).child("careArea").child("2");
                 reference2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                        String pump = snapshot.child("n_pumps").getValue().toString();
                     }
 
                     @Override
@@ -129,6 +129,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
                 intent.putExtra("Pump",pump);
+                intent.putExtra("ptindex","2");
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
@@ -137,12 +138,12 @@ public class PatientActivity1 extends AppCompatActivity {
         Patient3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
                         .child(key).child(user).child("careArea").child("3");
                 reference2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                        String pump = snapshot.child("n_pumps").getValue().toString();
                     }
 
                     @Override
@@ -153,6 +154,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
                 intent.putExtra("name", name);
                 intent.putExtra("user",user);
+                intent.putExtra("ptindex","3");
                 intent.putExtra("key",key);
                 intent.putExtra("Pump",pump);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -163,12 +165,12 @@ public class PatientActivity1 extends AppCompatActivity {
         Patient4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
                         .child(key).child(user).child("careArea").child("4");
                 reference2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                        String pump = snapshot.child("n_pumps").getValue().toString();
                     }
 
                     @Override
@@ -180,6 +182,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
+                intent.putExtra("ptindex","4");
                 intent.putExtra("Pump",pump);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
@@ -189,12 +192,12 @@ public class PatientActivity1 extends AppCompatActivity {
         Patient5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
                         .child(key).child(user).child("careArea").child("5");
                 reference2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                        String pump = snapshot.child("n_pumps").getValue().toString();
                     }
 
                     @Override
@@ -207,6 +210,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
                 intent.putExtra("Pump",pump);
+                intent.putExtra("ptindex","5");
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
@@ -215,12 +219,12 @@ public class PatientActivity1 extends AppCompatActivity {
         Patient6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
                         .child(key).child(user).child("careArea").child("6");
                 reference2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                        String pump = snapshot.child("n_pumps").getValue().toString();
                     }
 
                     @Override
@@ -233,6 +237,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
                 intent.putExtra("Pump",pump);
+                intent.putExtra("ptindex","6");
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
@@ -241,12 +246,12 @@ public class PatientActivity1 extends AppCompatActivity {
         Patient7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
                         .child(key).child(user).child("careArea").child("7");
                 reference2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                        String pump = snapshot.child("n_pumps").getValue().toString();
                     }
 
                     @Override
@@ -259,6 +264,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
                 intent.putExtra("Pump",pump);
+                intent.putExtra("ptindex","7");
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
@@ -267,12 +273,12 @@ public class PatientActivity1 extends AppCompatActivity {
         Patient8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users")
+                DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users")
                         .child(key).child(user).child("careArea").child("8");
                 reference2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pump = snapshot.child("n_pumps").getValue(String.class);
+                        String pump = snapshot.child("n_pumps").getValue().toString();
                     }
 
                     @Override
@@ -284,73 +290,84 @@ public class PatientActivity1 extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
+                intent.putExtra("ptindex",8);
                 intent.putExtra("Pump",pump);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
             }
         });
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users")
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users")
                 .child(key).child(user).child("careArea");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String pt1namestr = snapshot.child("1").child("name").getValue(String.class);
-                String pt1agestr = snapshot.child("1").child("age").getValue(String.class);
-                String pt1sexstr = snapshot.child("1").child("sex").getValue(String.class);
-                pt1age.setText(pt1agestr);
-                pt1name.setText(pt1namestr);
-                pt1sex.setText(pt1sexstr);
-
-                String pt2namestr = snapshot.child("2").child("name").getValue(String.class);
-                String pt2agestr = snapshot.child("2").child("age").getValue(String.class);
-                String pt2sexstr = snapshot.child("2").child("sex").getValue(String.class);
-                pt2age.setText(pt2agestr);
-                pt2name.setText(pt2namestr);
-                pt2sex.setText(pt2sexstr);
-
-                String pt3namestr = snapshot.child("3").child("name").getValue(String.class);
-                String pt3agestr = snapshot.child("3").child("age").getValue(String.class);
-                String pt3sexstr = snapshot.child("3").child("sex").getValue(String.class);
-                pt3age.setText(pt3agestr);
-                pt3name.setText(pt3namestr);
-                pt3sex.setText(pt3sexstr);
-
-                String pt4namestr = snapshot.child("4").child("name").getValue(String.class);
-                String pt4agestr = snapshot.child("4").child("age").getValue(String.class);
-                String pt4sexstr = snapshot.child("4").child("sex").getValue(String.class);
-                pt4age.setText(pt4agestr);
-                pt4name.setText(pt4namestr);
-                pt4sex.setText(pt4sexstr);
-
-                String pt5namestr = snapshot.child("5").child("name").getValue(String.class);
-                String pt5agestr = snapshot.child("5").child("age").getValue(String.class);
-                String pt5sexstr = snapshot.child("5").child("sex").getValue(String.class);
-                pt5age.setText(pt5agestr);
-                pt5name.setText(pt5namestr);
-                pt5sex.setText(pt5sexstr);
-
-                String pt6namestr = snapshot.child("6").child("name").getValue(String.class);
-                String pt6agestr = snapshot.child("6").child("age").getValue(String.class);
-                String pt6sexstr = snapshot.child("6").child("sex").getValue(String.class);
-                pt6age.setText(pt6agestr);
-                pt6name.setText(pt6namestr);
-                pt6sex.setText(pt6sexstr);
-
-                String pt7namestr = snapshot.child("7").child("name").getValue(String.class);
-                String pt7agestr = snapshot.child("7").child("age").getValue(String.class);
-                String pt7sexstr = snapshot.child("7").child("sex").getValue(String.class);
-                pt7age.setText(pt7agestr);
-                pt7name.setText(pt7namestr);
-                pt7sex.setText(pt7sexstr);
-
+                if (patients >=1){
+                    String pt1namestr = snapshot.child("1").child("name").getValue(String.class);
+                    String pt1agestr = snapshot.child("1").child("age").getValue().toString();
+                    String pt1sexstr = snapshot.child("1").child("sex").getValue(String.class);
+                    pt1age.setText(pt1agestr);
+                    pt1name.setText(pt1namestr);
+                    pt1sex.setText(pt1sexstr);
+                }
+                if (patients >=2){
+                    String pt2namestr = snapshot.child("2").child("name").getValue(String.class);
+                    String pt2agestr = snapshot.child("2").child("age").getValue().toString();
+                    String pt2sexstr = snapshot.child("2").child("sex").getValue(String.class);
+                    pt2age.setText(pt2agestr);
+                    pt2name.setText(pt2namestr);
+                    pt2sex.setText(pt2sexstr);
+                }
+                if (patients >=3){
+                    String pt3namestr = snapshot.child("3").child("name").getValue(String.class);
+                    String pt3agestr = snapshot.child("3").child("age").getValue().toString();
+                    String pt3sexstr = snapshot.child("3").child("sex").getValue(String.class);
+                    pt3age.setText(pt3agestr);
+                    pt3name.setText(pt3namestr);
+                    pt3sex.setText(pt3sexstr);
+                }
+                if (patients >=4){
+                    String pt4namestr = snapshot.child("4").child("name").getValue(String.class);
+                    String pt4agestr = snapshot.child("4").child("age").getValue().toString();
+                    String pt4sexstr = snapshot.child("4").child("sex").getValue(String.class);
+                    pt4age.setText(pt4agestr);
+                    pt4name.setText(pt4namestr);
+                    pt4sex.setText(pt4sexstr);
+                }
+                if (patients >=5){
+                    String pt5namestr = snapshot.child("5").child("name").getValue(String.class);
+                    String pt5agestr = snapshot.child("5").child("age").getValue().toString();
+                    String pt5sexstr = snapshot.child("5").child("sex").getValue(String.class);
+                    pt5age.setText(pt5agestr);
+                    pt5name.setText(pt5namestr);
+                    pt5sex.setText(pt5sexstr);
+                }
+                if (patients >=6){
+                    String pt6namestr = snapshot.child("6").child("name").getValue(String.class);
+                    String pt6agestr = snapshot.child("6").child("age").getValue().toString();
+                    String pt6sexstr = snapshot.child("6").child("sex").getValue(String.class);
+                    pt6age.setText(pt6agestr);
+                    pt6name.setText(pt6namestr);
+                    pt6sex.setText(pt6sexstr);
+                }
+                if (patients >=7){
+                    String pt7namestr = snapshot.child("7").child("name").getValue(String.class);
+                    String pt7agestr = snapshot.child("7").child("age").getValue().toString();
+                    String pt7sexstr = snapshot.child("7").child("sex").getValue(String.class);
+                    pt7age.setText(pt7agestr);
+                    pt7name.setText(pt7namestr);
+                    pt7sex.setText(pt7sexstr);
+                }
+                if (patients ==8){
                 String pt8namestr = snapshot.child("8").child("name").getValue(String.class);
-                String pt8agestr = snapshot.child("8").child("age").getValue(String.class);
+                String pt8agestr = snapshot.child("8").child("age").getValue().toString();
                 String pt8sexstr = snapshot.child("8").child("sex").getValue(String.class);
                 pt8age.setText(pt8agestr);
                 pt8name.setText(pt8namestr);
                 pt8sex.setText(pt8sexstr);
+                }
+
+
 
             }
 

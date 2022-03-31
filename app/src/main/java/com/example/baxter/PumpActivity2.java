@@ -32,7 +32,7 @@ public class PumpActivity2 extends SwipeActivity {
         pump9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PumpActivity2.this, Pump9.class);
+                Intent intent = new Intent(PumpActivity2.this, Pump1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
@@ -41,7 +41,7 @@ public class PumpActivity2 extends SwipeActivity {
         pump10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PumpActivity2.this, Pump10.class);
+                Intent intent = new Intent(PumpActivity2.this, Pump1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
@@ -49,7 +49,7 @@ public class PumpActivity2 extends SwipeActivity {
         pump11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PumpActivity2.this, Pump11.class);
+                Intent intent = new Intent(PumpActivity2.this, Pump1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
@@ -57,7 +57,7 @@ public class PumpActivity2 extends SwipeActivity {
         pump12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PumpActivity2.this, Pump12.class);
+                Intent intent = new Intent(PumpActivity2.this, Pump1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
@@ -65,7 +65,7 @@ public class PumpActivity2 extends SwipeActivity {
         pump13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PumpActivity2.this, Pump13.class);
+                Intent intent = new Intent(PumpActivity2.this, Pump1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
@@ -73,7 +73,7 @@ public class PumpActivity2 extends SwipeActivity {
         pump14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PumpActivity2.this, Pump14.class);
+                Intent intent = new Intent(PumpActivity2.this, Pump1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
@@ -81,7 +81,7 @@ public class PumpActivity2 extends SwipeActivity {
         pump15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PumpActivity2.this, Pump15.class);
+                Intent intent = new Intent(PumpActivity2.this, Pump1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
@@ -89,7 +89,7 @@ public class PumpActivity2 extends SwipeActivity {
         pump16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PumpActivity2.this, Pump16.class);
+                Intent intent = new Intent(PumpActivity2.this, Pump1.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }

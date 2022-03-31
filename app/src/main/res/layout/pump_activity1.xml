@@ -41,12 +41,12 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/Pump1Drug"
+                            android:id="@+id/Pump1drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Pump 1 Drug"
+                            android:text="Pump 1 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
@@ -54,7 +54,7 @@
                             android:id="@+id/Pump1Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/Pump1Drug"
+                            android:layout_below="@+id/Pump1drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:text="Pump 1 Rate"
@@ -62,13 +62,13 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/Pump1StartVolume"
+                            android:id="@+id/Pump1startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/Pump1Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 1 StartVolume"
+                            android:text="Pump 1 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -91,12 +91,12 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/Pump2Drug"
+                            android:id="@+id/Pump2drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Pump 2 Drug"
+                            android:text="Pump 2 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
@@ -105,7 +105,7 @@
                             android:id="@+id/Pump2Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/Pump2Drug"
+                            android:layout_below="@+id/Pump2drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:text="Pump 2 Rate"
@@ -113,13 +113,13 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/Pump2StartVolume"
+                            android:id="@+id/Pump2startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/Pump2Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 2 StartVolume"
+                            android:text="Pump 2 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -150,12 +150,12 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/Pump3Drug"
+                            android:id="@+id/Pump3drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Pump 3 Drug"
+                            android:text="Pump 3 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
@@ -164,7 +164,7 @@
                             android:id="@+id/Pump3Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/Pump3Drug"
+                            android:layout_below="@+id/Pump3drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:text="Pump 2 Rate"
@@ -172,13 +172,13 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/Pump3StartVolume"
+                            android:id="@+id/Pump3startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/Pump3Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 3 StartVolume"
+                            android:text="Pump 3 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -201,12 +201,12 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/Pump4Drug"
+                            android:id="@+id/Pump4drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Pump 4 Drug"
+                            android:text="Pump 4 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
@@ -215,7 +215,7 @@
                             android:id="@+id/Pump4Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/Pump4Drug"
+                            android:layout_below="@+id/Pump4drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:text="Pump 4 Rate"
@@ -223,13 +223,13 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/Pump4StartVolume"
+                            android:id="@+id/Pump4startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/Pump4Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 4 StartVolume"
+                            android:text="Pump 4 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -260,12 +260,12 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/Pump5Drug"
+                            android:id="@+id/Pump5drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Pump 5 Drug"
+                            android:text="Pump 5 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
@@ -274,7 +274,7 @@
                             android:id="@+id/Pump5Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/Pump5Drug"
+                            android:layout_below="@+id/Pump5drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:text="Pump 2 Rate"
@@ -282,13 +282,13 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/Pump5StartVolume"
+                            android:id="@+id/Pump5startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/Pump5Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 2 StartVolume"
+                            android:text="Pump 2 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -311,12 +311,12 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/Pump6Drug"
+                            android:id="@+id/Pump6drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Pump 6 Drug"
+                            android:text="Pump 6 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
@@ -325,7 +325,7 @@
                             android:id="@+id/Pump6Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/Pump6Drug"
+                            android:layout_below="@+id/Pump6drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:text="Pump 6 Rate"
@@ -333,13 +333,13 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/Pump6StartVolume"
+                            android:id="@+id/Pump6startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/Pump6Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 6 StartVolume"
+                            android:text="Pump 6 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -370,12 +370,12 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/Pump7Drug"
+                            android:id="@+id/Pump7drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Pump 7 Drug"
+                            android:text="Pump 7 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
@@ -384,7 +384,7 @@
                             android:id="@+id/Pump7Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/Pump7Drug"
+                            android:layout_below="@+id/Pump7drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:text="Pump 7 Rate"
@@ -392,13 +392,13 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/Pump7StartVolume"
+                            android:id="@+id/Pump7startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/Pump7Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 7 StartVolume"
+                            android:text="Pump 7 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -421,12 +421,12 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/Pump8Drug"
+                            android:id="@+id/Pump8drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Pump 8 Drug"
+                            android:text="Pump 8 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
@@ -435,7 +435,7 @@
                             android:id="@+id/Pump8Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/Pump8Drug"
+                            android:layout_below="@+id/Pump8drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:text="Pump 8 Rate"
@@ -443,13 +443,13 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/Pump8StartVolume"
+                            android:id="@+id/Pump8startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/Pump8Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 2 StartVolume"
+                            android:text="Pump 2 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
                     </RelativeLayout>
@@ -476,8 +476,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_centerVertical="true"
-                        android:text="Next Page"
-                        />
+                        android:text="Next Page" />
                 </RelativeLayout>
 
 

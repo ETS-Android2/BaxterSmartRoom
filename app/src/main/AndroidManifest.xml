@@ -13,16 +13,10 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".ReadData"
-            android:exported="false" />
-        <activity
             android:name=".PatientActivity3"
             android:exported="false" />
         <activity
             android:name=".PatientActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".CareArea"
             android:exported="false" />
         <activity
             android:name=".Splash"
@@ -41,52 +35,7 @@
             android:name=".PatientActivity1"
             android:exported="false" />
         <activity
-            android:name=".Pump16"
-            android:exported="false" />
-        <activity
-            android:name=".Pump15"
-            android:exported="false" />
-        <activity
-            android:name=".Pump14"
-            android:exported="false" />
-        <activity
-            android:name=".Pump13"
-            android:exported="false" />
-        <activity
-            android:name=".Pump12"
-            android:exported="false" />
-        <activity
-            android:name=".Pump11"
-            android:exported="false" />
-        <activity
-            android:name=".Pump10"
-            android:exported="false" />
-        <activity
-            android:name=".Pump9"
-            android:exported="false" />
-        <activity
             android:name=".PumpActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".Pump8"
-            android:exported="false" />
-        <activity
-            android:name=".Pump7"
-            android:exported="false" />
-        <activity
-            android:name=".Pump6"
-            android:exported="false" />
-        <activity
-            android:name=".Pump5"
-            android:exported="false" />
-        <activity
-            android:name=".Pump4"
-            android:exported="false" />
-        <activity
-            android:name=".Pump3"
-            android:exported="false" />
-        <activity
-            android:name=".Pump2"
             android:exported="false" />
         <activity
             android:name=".Pump1"

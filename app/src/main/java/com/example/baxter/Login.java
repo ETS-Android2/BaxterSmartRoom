@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
@@ -18,16 +20,16 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
     Button login;
-    TextInputLayout username, password;
+    EditText username, password;
     String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
-        username.findViewById(R.id.username);
-        password.findViewById(R.id.password);
-        login.findViewById(R.id.login);
+        username=findViewById(R.id.username);
+        password=findViewById(R.id.password);
+        login=findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,37 +48,36 @@ public class Login extends AppCompatActivity {
 
 
     private Boolean validateUsername() {
-        String val = username.getEditText().getText().toString();
+        String val = username.getText().toString();
         if (val.isEmpty()) {
             username.setError("Field cannot be empty");
             return false;
         } else {
             username.setError(null);
-            username.setErrorEnabled(false);
             return true;
         }
     }
 
     private Boolean validatePassword() {
-        String val = password.getEditText().getText().toString();
+        String val = password.getText().toString();
         if (val.isEmpty()) {
             password.setError("Field cannot be empty");
             return false;
         } else {
             password.setError(null);
-            password.setErrorEnabled(false);
             return true;
         }
     }
 
     private void isUser() {
-        String userEnteredUsername = username.getEditText().getText().toString().trim();
-        String userEnteredPassword = password.getEditText().getText().toString().trim();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user");
+        String userEnteredUsername = username.getText().toString().trim();
+        String userEnteredPassword = password.getText().toString().trim();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot1) {
                 key = snapshot1.getKey();
+                Log.d("P", key);
             }
 
             @Override
@@ -84,30 +85,36 @@ public class Login extends AppCompatActivity {
 
             }
         });
-        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("user").child(key);
-        Query checkUser = reference2.orderByChild("username").equalTo(userEnteredPassword);
+        key = "-MzRtDgKx0qddtUdzXdx";
+        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users").child(key);
+        Query checkUser = reference2.orderByKey().equalTo(userEnteredUsername);
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     String passwordFromDB = snapshot.child(userEnteredUsername).child("password").getValue(String.class);
+                    Log.d("d", passwordFromDB);
                     if (passwordFromDB.equals(userEnteredPassword)) {
                         String name = snapshot.child(userEnteredUsername).child("name").getValue(String.class);
-                        String patient = snapshot.child(userEnteredUsername).child("n_patients").getValue(String.class);
+                        String patient = snapshot.child(userEnteredUsername).child("n_patients").getValue().toString();
                         Intent intent2 = new Intent(getApplicationContext(), PatientActivity1.class);
                         intent2.putExtra("name", name);
                         intent2.putExtra("patients", patient);
                         intent2.putExtra("user", userEnteredUsername);
                         intent2.putExtra("key", key);
-                        Toast.makeText(Login.this, "Welcome" + name, Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this, "Welcome " + name, Toast.LENGTH_LONG).show();
                         intent2.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(intent2);
                         finish();
                     } else {
                         password.setError("Wrong Password");
+                        Toast.makeText(Login.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+
                     }
                 } else {
                     username.setError("No such User exist");
+                    Toast.makeText(Login.this, "No such User exist", Toast.LENGTH_SHORT).show();
+
                 }
             }
             @Override
