@@ -1,6 +1,7 @@
 package com.example.baxter;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -73,11 +75,27 @@ public class Login extends AppCompatActivity {
         String userEnteredUsername = username.getText().toString().trim();
         String userEnteredPassword = password.getText().toString().trim();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot1) {
+            public void onChildAdded(@NonNull DataSnapshot snapshot1, @Nullable String previousChildName) {
                 key = snapshot1.getKey();
                 Log.d("P", key);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot1, @Nullable String previousChildName) {
+                key = snapshot1.getKey();
+                Log.d("P", key);
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot1) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot1, @Nullable String previousChildName) {
+
             }
 
             @Override
@@ -85,7 +103,14 @@ public class Login extends AppCompatActivity {
 
             }
         });
-        key = "-MzRtDgKx0qddtUdzXdx";
+
+        String key2 = "-MzRtDgKx0qddtUdzXdx";
+        if (key == key2) {
+          Log.d("key status", "It worked I got key");
+        }  else {
+            Log.d("key status", "Duck it failed");
+            key = key2;
+        }
         DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users").child(key);
         Query checkUser = reference2.orderByKey().equalTo(userEnteredUsername);
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {

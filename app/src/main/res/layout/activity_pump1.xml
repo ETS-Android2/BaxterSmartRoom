@@ -13,13 +13,139 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp">
 
-            <TextView
-                android:id="@+id/dummytext"
-                android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/Layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.60"
+                    android:background="@color/blue"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/drug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:text="Drug"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/drug"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="rate"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="start Volume"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+                        <TextView
+                            android:id="@+id/alarmtext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Alarm text"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+                        <TextView
+                            android:id="@+id/pumpID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/alarmtext"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="PumpID"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi I'm pump 1" />
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:padding="2dp">
+
+                    <Button
+                        android:id="@+id/BackButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:text="Back"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="2dp">
+
+                    <Button
+                        android:id="@+id/HomeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:text="Home"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </RelativeLayout>
+
 
 
 </RelativeLayout>

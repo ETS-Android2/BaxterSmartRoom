@@ -20,7 +20,7 @@ public class PumpActivity1 extends SwipeActivity {
             Pump4Rate,Pump4drug,Pump4StartVolume,Pump6Rate,Pump6drug,Pump6StartVolume,Pump7Rate,Pump7drug,Pump7StartVolume,Pump8Rate,Pump8drug,Pump8StartVolume;
 
     Button fwdbutton, homebutton;
-    String patient, Pumpp, user, key, alarm1, alarm_severity1, alarm_text1, Pump1drugstr, Pump1Ratestr, Pump1startVolume, Pump1ID,
+    String ptindex, patient, Pumpp, user, key, alarm1, alarm_severity1, alarm_text1, Pump1drugstr, Pump1Ratestr, Pump1startVolume, Pump1ID,
             alarm2, alarm_severity2, alarm_text2, Pump2drugstr, Pump2Ratestr, Pump2startVolume, Pump2ID
             , alarm3, alarm_severity3, alarm_text3, Pump3drugstr, Pump3Ratestr, Pump3startVolume, Pump3ID
             , alarm4, alarm_severity4, alarm_text4, Pump4drugstr, Pump4Ratestr, Pump4startVolume, Pump4ID
@@ -79,7 +79,7 @@ public class PumpActivity1 extends SwipeActivity {
         user = grabdata.getStringExtra("user");
         Pumpp = grabdata.getStringExtra("Pump");
         key = grabdata.getStringExtra("key");
-        String ptindex = grabdata.getStringExtra("ptindex");
+        ptindex = grabdata.getStringExtra("ptindex");
         int Pumps = Integer.parseInt(Pumpp);
         if (Pumps <= 8) {
             fwdbutton.setEnabled(false);
@@ -307,6 +307,7 @@ public class PumpActivity1 extends SwipeActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(PumpActivity1.this, Pump1.class);
                 intent.putExtra("alarm", alarm1);
+                intent.putExtra("ptindex", ptindex);
                 intent.putExtra("alarm_severity", alarm_severity1);
                 intent.putExtra("drug", Pump1drugstr);
                 intent.putExtra("Rate", Pump1Ratestr);
@@ -326,6 +327,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm", alarm2);
                 intent.putExtra("alarm_severity", alarm_severity2);
                 intent.putExtra("drug", Pump2drugstr);
+                intent.putExtra("ptindex", ptindex);
                 intent.putExtra("Rate", Pump2Ratestr);
                 intent.putExtra("startVol", Pump2startVolume);
                 intent.putExtra("ID", Pump2ID);
@@ -344,6 +346,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm_severity", alarm_severity3);
                 intent.putExtra("drug", Pump3drugstr);
                 intent.putExtra("Rate", Pump3Ratestr);
+                intent.putExtra("ptindex", ptindex);
                 intent.putExtra("startVol", Pump3startVolume);
                 intent.putExtra("ID", Pump3ID);
                 intent.putExtra("alarm_text", alarm_text3);
@@ -360,6 +363,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm", alarm4);
                 intent.putExtra("alarm_severity", alarm_severity4);
                 intent.putExtra("drug", Pump4drugstr);
+                intent.putExtra("ptindex", ptindex);
                 intent.putExtra("Rate", Pump4Ratestr);
                 intent.putExtra("startVol", Pump4startVolume);
                 intent.putExtra("ID", Pump4ID);
@@ -377,6 +381,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm", alarm5);
                 intent.putExtra("alarm_severity", alarm_severity5);
                 intent.putExtra("drug", Pump5drugstr);
+                intent.putExtra("ptindex", ptindex);
                 intent.putExtra("Rate", Pump5Ratestr);
                 intent.putExtra("startVol", Pump5startVolume);
                 intent.putExtra("ID", Pump5ID);
@@ -394,6 +399,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm", alarm1);
                 intent.putExtra("alarm_severity", alarm_severity6);
                 intent.putExtra("drug", Pump6drugstr);
+                intent.putExtra("ptindex", ptindex);
                 intent.putExtra("Rate", Pump6Ratestr);
                 intent.putExtra("startVol", Pump6startVolume);
                 intent.putExtra("ID", Pump6ID);
@@ -412,6 +418,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm_severity", alarm_severity7);
                 intent.putExtra("drug", Pump7drugstr);
                 intent.putExtra("Rate", Pump7Ratestr);
+                intent.putExtra("ptindex", ptindex);
                 intent.putExtra("startVol", Pump7startVolume);
                 intent.putExtra("ID", Pump7ID);
                 intent.putExtra("alarm_text", alarm_text7);
@@ -429,6 +436,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm_severity", alarm_severity8);
                 intent.putExtra("drug", Pump8drugstr);
                 intent.putExtra("Rate", Pump8Ratestr);
+                intent.putExtra("ptindex", ptindex);
                 intent.putExtra("startVol", Pump8startVolume);
                 intent.putExtra("ID", Pump8ID);
                 intent.putExtra("alarm_text", alarm_text8);
