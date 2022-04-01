@@ -22,6 +22,7 @@ public class PatientActivity1 extends AppCompatActivity {
             pt4age,pt4name,pt4sex,pt6age,pt6name,pt6sex,pt7age,pt7name,pt7sex,pt8age,pt8name,pt8sex;
     String patient, user, key, pump1,pump2,pump3,pump4,pump5,pump6,pump7,pump8;
     Button fwdbutton;
+    int patients;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,87 +64,209 @@ public class PatientActivity1 extends AppCompatActivity {
         patient = grabdata.getStringExtra("patients");
         user = grabdata.getStringExtra("user");
         key = grabdata.getStringExtra("key");
-        int patients = Integer.parseInt(patient);
+        patients = Integer.parseInt(patient);
         if (patients <= 8) {
             fwdbutton.setEnabled(false);
             fwdbutton.setVisibility(View.GONE);
         }
+        Patient6.setEnabled(false);
+        Patient6.setVisibility(View.INVISIBLE);
+        Patient7.setEnabled(false);
+        Patient7.setVisibility(View.INVISIBLE);
+        Patient8.setEnabled(false);
+        Patient8.setVisibility(View.INVISIBLE);
+        Patient5.setEnabled(false);
+        Patient5.setVisibility(View.INVISIBLE);
+        Patient4.setEnabled(false);
+        Patient4.setVisibility(View.INVISIBLE);
+        Patient3.setEnabled(false);
+        Patient3.setVisibility(View.INVISIBLE);
+        Patient2.setEnabled(false);
+        Patient2.setVisibility(View.INVISIBLE);
+        Patient1.setEnabled(false);
+        Patient1.setVisibility(View.INVISIBLE);
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users")
                 .child(key).child(user).child("careArea");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (patients >=1){
-                    String pt1namestr = snapshot.child("1").child("name").getValue(String.class);
+                    String pt1namestr = snapshot.child("1").child("name").getValue().toString();;
                     String pt1agestr = snapshot.child("1").child("age").getValue().toString();
-                    String pt1sexstr = snapshot.child("1").child("sex").getValue(String.class);
+                    String pt1sexstr = snapshot.child("1").child("sex").getValue().toString();
+                    String maxSeverity = snapshot.child("1").child("maxSeverity").getValue().toString();
+                    int max = Integer.parseInt(maxSeverity);
+                        if (max== 1) {
+                            Patient1.setBackgroundResource(R.color.yellow);
+                        } else if (max==2){
+                            Patient1.setBackgroundResource(R.color.orange);
+                        } else if (max == 3){
+                            Patient1.setBackgroundResource(R.color.red);
+                        } else {
+                            Patient1.setBackgroundResource(R.color.green);
+                        }
                     pump1 = snapshot.child("1").child("n_pumps").getValue().toString();
                     pt1age.setText(pt1agestr);
                     pt1name.setText(pt1namestr);
                     pt1sex.setText(pt1sexstr);
+                    Patient1.setEnabled(true);
+                    Patient1.setVisibility(View.VISIBLE);
                 }
                 if (patients >=2){
-                    String pt2namestr = snapshot.child("2").child("name").getValue(String.class);
+                    String pt2namestr = snapshot.child("2").child("name").getValue().toString();;
                     String pt2agestr = snapshot.child("2").child("age").getValue().toString();
-                    String pt2sexstr = snapshot.child("2").child("sex").getValue(String.class);
+                    String pt2sexstr = snapshot.child("2").child("sex").getValue().toString();;
                     pt2age.setText(pt2agestr);
                     pt2name.setText(pt2namestr);
                     pump2 = snapshot.child("2").child("n_pumps").getValue().toString();
                     pt2sex.setText(pt2sexstr);
+                    String maxSeverity = snapshot.child("2").child("maxSeverity").getValue().toString();
+                    int max = Integer.parseInt(maxSeverity);
+                    if (max== 1) {
+                        Patient2.setBackgroundResource(R.color.yellow);
+                    } else if (max==2){
+                        Patient2.setBackgroundResource(R.color.orange);
+                    } else if (max == 3){
+                        Patient2.setBackgroundResource(R.color.red);
+                    } else {
+                        Patient2.setBackgroundResource(R.color.green);
+                    }
+                    Patient2.setEnabled(true);
+                    Patient2.setVisibility(View.VISIBLE);
                 }
                 if (patients >=3){
-                    String pt3namestr = snapshot.child("3").child("name").getValue(String.class);
+                    String pt3namestr = snapshot.child("3").child("name").getValue().toString();;
                     String pt3agestr = snapshot.child("3").child("age").getValue().toString();
-                    String pt3sexstr = snapshot.child("3").child("sex").getValue(String.class);
+                    String pt3sexstr = snapshot.child("3").child("sex").getValue().toString();;
                     pt3age.setText(pt3agestr);
                     pt3name.setText(pt3namestr);
                     pt3sex.setText(pt3sexstr);
                     pump3 = snapshot.child("3").child("n_pumps").getValue().toString();
+                    String maxSeverity = snapshot.child("3").child("maxSeverity").getValue().toString();
+                    int max = Integer.parseInt(maxSeverity);
+                    if (max== 1) {
+                        Patient3.setBackgroundResource(R.color.yellow);
+                    } else if (max==2){
+                        Patient3.setBackgroundResource(R.color.orange);
+                    } else if (max == 3){
+                        Patient3.setBackgroundResource(R.color.red);
+                    } else {
+                        Patient3.setBackgroundResource(R.color.green);
+                    }
+                    Patient3.setEnabled(true);
+                    Patient3.setVisibility(View.VISIBLE);
+
                 }
                 if (patients >=4){
-                    String pt4namestr = snapshot.child("4").child("name").getValue(String.class);
+                    String pt4namestr = snapshot.child("4").child("name").getValue().toString();;
                     String pt4agestr = snapshot.child("4").child("age").getValue().toString();
-                    String pt4sexstr = snapshot.child("4").child("sex").getValue(String.class);
+                    String pt4sexstr = snapshot.child("4").child("sex").getValue().toString();;
                     pt4age.setText(pt4agestr);
                     pt4name.setText(pt4namestr);
                     pt4sex.setText(pt4sexstr);
                     pump4 = snapshot.child("4").child("n_pumps").getValue().toString();
+                    String maxSeverity = snapshot.child("4").child("maxSeverity").getValue().toString();
+                    int max = Integer.parseInt(maxSeverity);
+                    if (max== 1) {
+                        Patient4.setBackgroundResource(R.color.yellow);
+                    } else if (max==2){
+                        Patient4.setBackgroundResource(R.color.orange);
+                    } else if (max == 3){
+                        Patient4.setBackgroundResource(R.color.red);
+                    } else {
+                        Patient4.setBackgroundResource(R.color.green);
+                    }
+                    Patient4.setEnabled(true);
+                    Patient4.setVisibility(View.VISIBLE);
                 }
                 if (patients >=5){
-                    String pt5namestr = snapshot.child("5").child("name").getValue(String.class);
+                    String pt5namestr = snapshot.child("5").child("name").getValue().toString();;
                     String pt5agestr = snapshot.child("5").child("age").getValue().toString();
-                    String pt5sexstr = snapshot.child("5").child("sex").getValue(String.class);
+                    String pt5sexstr = snapshot.child("5").child("sex").getValue().toString();;
                     pt5age.setText(pt5agestr);
                     pt5name.setText(pt5namestr);
                     pt5sex.setText(pt5sexstr);
                     pump5 = snapshot.child("5").child("n_pumps").getValue().toString();
+                    Patient5.setEnabled(true);
+                    Patient5.setVisibility(View.VISIBLE);
+                    String maxSeverity = snapshot.child("5").child("maxSeverity").getValue().toString();
+                    int max = Integer.parseInt(maxSeverity);
+                    if (max== 1) {
+                        Patient5.setBackgroundResource(R.color.yellow);
+                    } else if (max==2){
+                        Patient5.setBackgroundResource(R.color.orange);
+                    } else if (max == 3){
+                        Patient5.setBackgroundResource(R.color.red);
+                    } else {
+                        Patient5.setBackgroundResource(R.color.green);
+                    }
                 }
                 if (patients >=6){
-                    String pt6namestr = snapshot.child("6").child("name").getValue(String.class);
+                    String pt6namestr = snapshot.child("6").child("name").getValue().toString();;
                     String pt6agestr = snapshot.child("6").child("age").getValue().toString();
-                    String pt6sexstr = snapshot.child("6").child("sex").getValue(String.class);
+                    String pt6sexstr = snapshot.child("6").child("sex").getValue().toString();;
                     pt6age.setText(pt6agestr);
                     pt6name.setText(pt6namestr);
                     pt6sex.setText(pt6sexstr);
                     pump6 = snapshot.child("6").child("n_pumps").getValue().toString();
+                    Patient6.setEnabled(true);
+                    Patient6.setVisibility(View.VISIBLE);
+                    String maxSeverity = snapshot.child("6").child("maxSeverity").getValue().toString();
+                    int max = Integer.parseInt(maxSeverity);
+                    if (max== 1) {
+                        Patient6.setBackgroundResource(R.color.yellow);
+                    } else if (max==2){
+                        Patient6.setBackgroundResource(R.color.orange);
+                    } else if (max == 3){
+                        Patient6.setBackgroundResource(R.color.red);
+                    } else {
+                        Patient6.setBackgroundResource(R.color.green);
+                    }
                 }
                 if (patients >=7){
-                    String pt7namestr = snapshot.child("7").child("name").getValue(String.class);
+                    String pt7namestr = snapshot.child("7").child("name").getValue().toString();;
                     String pt7agestr = snapshot.child("7").child("age").getValue().toString();
-                    String pt7sexstr = snapshot.child("7").child("sex").getValue(String.class);
+                    String pt7sexstr = snapshot.child("7").child("sex").getValue().toString();;
                     pt7age.setText(pt7agestr);
                     pt7name.setText(pt7namestr);
                     pump7 = snapshot.child("7").child("n_pumps").getValue().toString();
                     pt7sex.setText(pt7sexstr);
+                    Patient7.setEnabled(true);
+                    Patient7.setVisibility(View.VISIBLE);
+                    String maxSeverity = snapshot.child("7").child("maxSeverity").getValue().toString();
+                    int max = Integer.parseInt(maxSeverity);
+                    if (max== 1) {
+                        Patient7.setBackgroundResource(R.color.yellow);
+                    } else if (max==2){
+                        Patient7.setBackgroundResource(R.color.orange);
+                    } else if (max == 3){
+                        Patient7.setBackgroundResource(R.color.red);
+                    } else {
+                        Patient7.setBackgroundResource(R.color.green);
+                    }
+
                 }
                 if (patients ==8){
-                String pt8namestr = snapshot.child("8").child("name").getValue(String.class);
+                String pt8namestr = snapshot.child("8").child("name").getValue().toString();;
                 String pt8agestr = snapshot.child("8").child("age").getValue().toString();
-                String pt8sexstr = snapshot.child("8").child("sex").getValue(String.class);
+                String pt8sexstr = snapshot.child("8").child("sex").getValue().toString();;
                 pt8age.setText(pt8agestr);
                 pump8 = snapshot.child("8").child("n_pumps").getValue().toString();
+                    Patient8.setEnabled(true);
+                    Patient8.setVisibility(View.VISIBLE);
                 pt8name.setText(pt8namestr);
                 pt8sex.setText(pt8sexstr);
+                    String maxSeverity = snapshot.child("8").child("maxSeverity").getValue().toString();
+                    int max = Integer.parseInt(maxSeverity);
+                    if (max== 1) {
+                        Patient8.setBackgroundResource(R.color.yellow);
+                    } else if (max==2){
+                        Patient8.setBackgroundResource(R.color.orange);
+                    } else if (max == 3){
+                        Patient8.setBackgroundResource(R.color.red);
+                    } else {
+                        Patient8.setBackgroundResource(R.color.green);
+                    }
                 }
             }
             @Override
@@ -271,7 +394,6 @@ public class PatientActivity1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
-
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
                 intent.putExtra("ptindex",8);
@@ -279,7 +401,6 @@ public class PatientActivity1 extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
-
             }
         });
     }

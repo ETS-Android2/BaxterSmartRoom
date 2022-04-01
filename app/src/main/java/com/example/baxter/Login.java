@@ -75,36 +75,25 @@ public class Login extends AppCompatActivity {
         String userEnteredUsername = username.getText().toString().trim();
         String userEnteredPassword = password.getText().toString().trim();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-        reference.addChildEventListener(new ChildEventListener() {
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot1, @Nullable String previousChildName) {
-                key = snapshot1.getKey();
-                Log.d("P", key);
-            }
+            public void onDataChange(@NonNull DataSnapshot snapshot1) {
+                for(DataSnapshot uniqueKeySnapshot : snapshot1.getChildren()){
+                    //Loop 1 to go through all the child nodes of users
+                    key = uniqueKeySnapshot.getKey();
+                    Log.d("key", key);
 
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot1, @Nullable String previousChildName) {
-                key = snapshot1.getKey();
-                Log.d("P", key);
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot1) {
+                }
 
             }
 
             @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot1, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error1) {
 
             }
         });
 
-        String key2 = "-MzRtDgKx0qddtUdzXdx";
+        String key2 = "-Mza7zv2HadyS87jjgZL";
         if (key == key2) {
           Log.d("key status", "It worked I got key");
         }  else {
@@ -118,7 +107,6 @@ public class Login extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     String passwordFromDB = snapshot.child(userEnteredUsername).child("password").getValue(String.class);
-                    Log.d("d", passwordFromDB);
                     if (passwordFromDB.equals(userEnteredPassword)) {
                         String name = snapshot.child(userEnteredUsername).child("name").getValue(String.class);
                         String patient = snapshot.child(userEnteredUsername).child("n_patients").getValue().toString();
