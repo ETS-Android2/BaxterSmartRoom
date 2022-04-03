@@ -26,10 +26,26 @@ names = [m_names,f_names,l_names]
 
 def synthesize(users, dlib, names, n_care_areas=3, n_patients=25, avgPumpsPerPatient=4):
     pumpID = []
-    
+    drug = []
+
+    for i in range(n_patients):
+        if np.random.randint(0,2) > 0:
+            nPumpsPerPatient = round(int(avgPumpsPerPatient) / int(np.random.randint(1,5)))
+        else:
+            nPumpsPerPatient = round(int(avgPumpsPerPatient) * int(np.random.randint(1,5)))
+
+        for j in range(nPumpsPerPatient):
+            drug_i = np.random.randint(0, len(dlib.drug) - 1) #index for which drug to pick
+
+            #append pumps.csv
+            pumpID.append(18696786 + i)
+            drug.append(dlib.drug[drug_i])
+            currentRate.append(currentRate)
+
+    return None
 
 
-synthesize(users, dlib, 3, 1000)
+synthesize(users, dlib, names)
 
 emr = []
 pumps = []

@@ -67,6 +67,9 @@ def function(user, care_area): #user and care_area are strings
                             "alarm" : int(pumps.alarm[i]),
                             "alarm_severity" : tmp_severity,
                             "alarm_text" : "No alarm"
+                            "time_left" : "tbd", #new
+                            "projected_end_time" : "tbd", #new
+                            "percent_complete" : "tbd" #new
                             }
                     else:
                         data[user][care_area][int(emr.room[i])] = {
@@ -127,7 +130,10 @@ goal_data = {
                         "startVolume" : 250,
                         "alarm" : 0,
                         "alarm_severity" : 0,
-                        "alarm_text" : "No alarm"
+                        "alarm_text" : "No alarm",
+                        "time_left" : "tbd", #new
+                        "projected_end_time" : "tbd", #new
+                        "percent_complete" : "tbd" #new
                     }
                 }
             }

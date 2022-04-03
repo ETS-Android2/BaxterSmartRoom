@@ -57,17 +57,28 @@ def function(user, care_area): #user and care_area are strings
                             currentPosition = currentPosition[pump_ind]
                             break
                         else:
+                            tmp_severity = int(random.randint(0, 4))
+                            maxSeverity = data[user][care_area][int(emr.room[i])]["maxSeverity"]
+
+                            data[user][care_area][int(emr.room[i])]["n_pumps"] = pump_ind #set n_pumps to this value
+                            if tmp_severity > maxSeverity:
+                                data[user][care_area][int(emr.room[i])]["maxSeverity"] = tmp_severity
+
                             data[user][care_area][int(emr.room[i])]["pumps"][pump_ind] = {
                             "pumpID" : int(pumps.pumpID[i]),
                             "drug" : pumps.drug[i],
                             "currentRate" : float(pumps.currentRate[i]),
-                            "startVolume" : pumps.drug[i],
+                            "startVolume" : int(pumps.startVolume[i]),
                             "alarm" : int(pumps.alarm[i]),
-                            "alarm_severity" : int(random.randint(0, 3)),
+                            "alarm_severity" : tmp_severity,
                             "alarm_text" : "No alarm"
+                            "time_left" : "tbd", #new
+                            "projected_end_time" : "tbd", #new
+                            "percent_complete" : "tbd" #new
                             }
                     else:
                         data[user][care_area][int(emr.room[i])] = {
+                        "maxSeverity" : 0,
                         "patientID" : int(emr.patientID[i]),
                         "name" : emr.patient[i],
                         "age" : int(emr.age[i]),
@@ -80,7 +91,7 @@ def function(user, care_area): #user and care_area are strings
             else:
                 data[user] = {
                 "name" : "Tram Nguyen", #change this after you create user database
-                "password" : 123456,
+                "password" : "123456",
                 "n_patients" : len(list(set(emr.patient))) #total number of pumps in care area
                 }
 
