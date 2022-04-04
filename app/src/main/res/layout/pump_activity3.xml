@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.baxter.PatientActivity2">
+    tools:context="com.example.baxter.PumpActivity3">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +24,7 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/Patient1"
+                    android:id="@+id/Pump1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
@@ -41,34 +41,34 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/pt1name"
+                            android:id="@+id/Pump1drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Patient 1 Name"
+                            android:text="Pump 1 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
                         <TextView
-                            android:id="@+id/pt1age"
+                            android:id="@+id/Pump1Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt1name"
+                            android:layout_below="@+id/Pump1drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 1 Age"
+                            android:text="Pump 1 Rate"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/pt1sex"
+                            android:id="@+id/Pump1startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt1age"
+                            android:layout_below="@+id/Pump1Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 1 Sex"
+                            android:text="Pump 1 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -77,7 +77,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/Patient2"
+                    android:id="@+id/Pump2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -91,145 +91,35 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/pt2name"
+                            android:id="@+id/Pump2drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Patient 2 Name"
+                            android:text="Pump 2 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
 
                         <TextView
-                            android:id="@+id/pt2age"
+                            android:id="@+id/Pump2Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt2name"
+                            android:layout_below="@+id/Pump2drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 2 Age"
+                            android:text="Pump 2 Rate"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/pt2sex"
+                            android:id="@+id/Pump2startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt2age"
+                            android:layout_below="@+id/Pump2Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 2 Sex"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1">
-
-                <RelativeLayout
-                    android:id="@+id/Patient3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.60"
-                    android:background="@color/green"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true">
-
-                        <TextView
-                            android:id="@+id/pt3name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:text="Patient 3 Name"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
-
-                        <TextView
-                            android:id="@+id/pt3age"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt3name"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Patient 2 Age"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/pt3sex"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt3age"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Patient 3 Sex"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/Patient4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.60"
-                    android:background="@color/green"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true">
-
-                        <TextView
-                            android:id="@+id/pt4name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:text="Patient 4 Name"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
-
-                        <TextView
-                            android:id="@+id/pt4age"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt4name"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Patient 4 Age"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/pt4sex"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt4age"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Patient 4 Sex"
+                            android:text="Pump 2 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -246,7 +136,7 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/Patient5"
+                    android:id="@+id/Pump3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -260,35 +150,35 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/pt5name"
+                            android:id="@+id/Pump3drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Patient 5 Name"
+                            android:text="Pump 3 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
 
                         <TextView
-                            android:id="@+id/pt5age"
+                            android:id="@+id/Pump3Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt5name"
+                            android:layout_below="@+id/Pump3drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 2 Age"
+                            android:text="Pump 2 Rate"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/pt5sex"
+                            android:id="@+id/Pump3startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt5age"
+                            android:layout_below="@+id/Pump3Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 2 Sex"
+                            android:text="Pump 3 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -297,7 +187,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/Patient6"
+                    android:id="@+id/Pump4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -311,35 +201,35 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/pt6name"
+                            android:id="@+id/Pump4drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Patient 6 Name"
+                            android:text="Pump 4 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
 
                         <TextView
-                            android:id="@+id/pt6age"
+                            android:id="@+id/Pump4Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt6name"
+                            android:layout_below="@+id/Pump4drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 6 Age"
+                            android:text="Pump 4 Rate"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/pt6sex"
+                            android:id="@+id/Pump4startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt6age"
+                            android:layout_below="@+id/Pump4Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 6 Sex"
+                            android:text="Pump 4 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -356,7 +246,7 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/Patient7"
+                    android:id="@+id/Pump5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -370,35 +260,35 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/pt7name"
+                            android:id="@+id/Pump5drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Patient 7 Name"
+                            android:text="Pump 5 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
 
                         <TextView
-                            android:id="@+id/pt7age"
+                            android:id="@+id/Pump5Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt7name"
+                            android:layout_below="@+id/Pump5drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 7 Age"
+                            android:text="Pump 2 Rate"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/pt7sex"
+                            android:id="@+id/Pump5startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt7age"
+                            android:layout_below="@+id/Pump5Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 7 Sex"
+                            android:text="Pump 2 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -407,7 +297,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/Patient8"
+                    android:id="@+id/Pump6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -421,35 +311,145 @@
                         android:layout_centerInParent="true">
 
                         <TextView
-                            android:id="@+id/pt8name"
+                            android:id="@+id/Pump6drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
-                            android:text="Patient 8 Name"
+                            android:text="Pump 6 drug"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
 
                         <TextView
-                            android:id="@+id/pt8age"
+                            android:id="@+id/Pump6Rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt8name"
+                            android:layout_below="@+id/Pump6drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 8 Age"
+                            android:text="Pump 6 Rate"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/pt8sex"
+                            android:id="@+id/Pump6startVolume"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/pt8age"
+                            android:layout_below="@+id/Pump6Rate"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 2 Sex"
+                            android:text="Pump 6 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/Pump7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.60"
+                    android:background="@color/green"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/Pump7drug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 7 drug"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump7Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump7drug"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 7 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump7startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump7Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 7 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Pump8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.60"
+                    android:background="@color/green"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/Pump8drug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 8 drug"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump8Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump8drug"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 8 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump8startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump8Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 2 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
                     </RelativeLayout>
@@ -462,7 +462,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:weightSum="2">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -488,24 +488,8 @@
                         android:id="@+id/HomeButton"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:layout_centerInParent="true"
-                        android:text="Home" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="2dp">
-
-                    <Button
-                        android:id="@+id/ForwardButton"
-                        android:layout_width="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_height="40dp"
-                        android:layout_centerVertical="true"
-                        android:text="Next Page"/>
+                        android:text="Home" />
 
                 </RelativeLayout>
 

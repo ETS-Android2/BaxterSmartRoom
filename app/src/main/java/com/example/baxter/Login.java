@@ -93,7 +93,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        String key2 = "-Mza7zv2HadyS87jjgZL";
+        String key2 = "-MzmWhp7WMEmmo8TOcq_";
         if (key == key2) {
           Log.d("key status", "It worked I got key");
         }  else {

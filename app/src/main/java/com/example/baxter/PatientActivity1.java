@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class PatientActivity1 extends AppCompatActivity {
+public class PatientActivity1 extends SwipeActivity {
     RelativeLayout Patient1, Patient2, Patient3, Patient4, Patient5, Patient6, Patient7, Patient8;
     TextView pt1age,pt1name,pt1sex,pt2age,pt2name,pt2sex,pt5age,pt5name,pt5sex,pt3age,pt3name,pt3sex,
             pt4age,pt4name,pt4sex,pt6age,pt6name,pt6sex,pt7age,pt7name,pt7sex,pt8age,pt8name,pt8sex;
@@ -246,14 +246,14 @@ public class PatientActivity1 extends AppCompatActivity {
                     }
 
                 }
-                if (patients ==8){
+                if (patients >=8){
                 String pt8namestr = snapshot.child("8").child("name").getValue().toString();;
                 String pt8agestr = snapshot.child("8").child("age").getValue().toString();
                 String pt8sexstr = snapshot.child("8").child("sex").getValue().toString();;
                 pt8age.setText(pt8agestr);
                 pump8 = snapshot.child("8").child("n_pumps").getValue().toString();
-                    Patient8.setEnabled(true);
-                    Patient8.setVisibility(View.VISIBLE);
+                Patient8.setEnabled(true);
+                Patient8.setVisibility(View.VISIBLE);
                 pt8name.setText(pt8namestr);
                 pt8sex.setText(pt8sexstr);
                     String maxSeverity = snapshot.child("8").child("maxSeverity").getValue().toString();
@@ -277,12 +277,30 @@ public class PatientActivity1 extends AppCompatActivity {
         clickListen();
     }
 
+    @Override
+    protected void onSwipeRight() {
+
+    }
+
+    @Override
+    protected void onSwipeLeft() {
+        if (patients >8 ) {
+            Intent intent = new Intent(PatientActivity1.this, PatientActivity2.class);
+            intent.putExtra("patients", patient);
+            intent.putExtra("user", user);
+            intent.putExtra("key", key);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            finish();
+        }
+    }
+
     private void clickListen() {
         fwdbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PatientActivity1.this, PatientActivity2.class);
-
+                intent.putExtra("patients", patient);
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -297,6 +315,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
                 intent.putExtra("user",user);
                 intent.putExtra("ptindex","1");
+                intent.putExtra("patients", patient);
                 intent.putExtra("key",key);
                 intent.putExtra("Pump",pump1);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -311,6 +330,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
+                intent.putExtra("patients", patient);
                 intent.putExtra("Pump",pump2);
                 intent.putExtra("ptindex","2");
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -326,6 +346,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 intent.putExtra("user",user);
                 intent.putExtra("ptindex","3");
                 intent.putExtra("key",key);
+                intent.putExtra("patients", patient);
                 intent.putExtra("Pump",pump3);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
@@ -340,6 +361,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
                 intent.putExtra("ptindex","4");
+                intent.putExtra("patients", patient);
                 intent.putExtra("Pump",pump4);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent); finish();
@@ -354,6 +376,7 @@ public class PatientActivity1 extends AppCompatActivity {
 
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
+                intent.putExtra("patients", patient);
                 intent.putExtra("Pump",pump5);
                 intent.putExtra("ptindex","5");
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -368,6 +391,7 @@ public class PatientActivity1 extends AppCompatActivity {
 
                 intent.putExtra("user", user);
                 intent.putExtra("key", key);
+                intent.putExtra("patients", patient);
                 intent.putExtra("Pump", pump6);
                 intent.putExtra("ptindex", "6");
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -383,6 +407,7 @@ public class PatientActivity1 extends AppCompatActivity {
 
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
+                intent.putExtra("patients", patient);
                 intent.putExtra("Pump",pump7);
                 intent.putExtra("ptindex","7");
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -396,6 +421,7 @@ public class PatientActivity1 extends AppCompatActivity {
                 Intent intent = new Intent(PatientActivity1.this, PumpActivity1.class);
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
+                intent.putExtra("patients", patient);
                 intent.putExtra("ptindex",8);
                 intent.putExtra("Pump",pump8);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);

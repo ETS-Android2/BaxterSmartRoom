@@ -24,7 +24,7 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/pump9"
+                    android:id="@+id/Pump9"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
@@ -65,7 +65,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/pump10"
+                    android:id="@+id/Pump10"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -111,7 +111,7 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/pump11"
+                    android:id="@+id/Pump11"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -149,7 +149,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/pump12"
+                    android:id="@+id/Pump12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -195,7 +195,7 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/pump13"
+                    android:id="@+id/Pump13"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -233,7 +233,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/pump14"
+                    android:id="@+id/Pump14"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -279,7 +279,7 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/pump15"
+                    android:id="@+id/Pump15"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -317,7 +317,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/pump16"
+                    android:id="@+id/Pump16"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -361,7 +361,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2">
+                android:weightSum="3">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -371,28 +371,44 @@
                     android:padding="2dp">
 
                     <Button
-                        android:id="@+id/backbutton"
+                        android:id="@+id/BackButton"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_centerVertical="true"
-                        android:text="Previous Page"/>
+                        android:text="Prev Page" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="2dp">
+
+                    <Button
+                        android:id="@+id/HomeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:text="Home" />
+
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="5dp">
+                    android:padding="2dp">
 
                     <Button
-                        android:id="@+id/Home"
+                        android:id="@+id/ForwardButton"
                         android:layout_width="wrap_content"
-                        android:layout_alignParentRight="true"
                         android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:text="Home"/>
+                        android:text="Next Page" />
 
                 </RelativeLayout>
+
+
             </LinearLayout>
 
         </LinearLayout>
