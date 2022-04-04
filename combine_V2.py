@@ -4,14 +4,16 @@ import json
 from firebase import firebase
 from functions import get_index
 from numpy import random as random
+from datetime import datetime
+from datetime import timedelta
 
 def function(user, care_area): #user and care_area are strings
 
     # --------------------------------------------------------------------------
     # load data
     # --------------------------------------------------------------------------
-    emr = pd.read_csv('emr.csv')
-    pumps = pd.read_csv('pumps.csv')
+    emr = pd.read_csv('emr_AUTO.csv')
+    pumps = pd.read_csv('pumps_AUTO.csv')
     dlib = pd.read_csv('drug_library.csv')
     alib = pd.read_csv('alarm_flagging.csv')
 
@@ -46,7 +48,7 @@ def function(user, care_area): #user and care_area are strings
                     currentPosition = currentPosition[care_area]
                     if int(emr.room[i]) in currentPosition:
                         currentPosition = currentPosition[int(emr.room[i])]
-                        currentPosition = currentPosition["pumps"]
+                        currentPosition = currentPosition["Pumps"]
                         pump_ind = get_index(i, data, user, care_area, int(emr.room[i]))
                         if pump_ind in currentPosition:
                             currentPosition = currentPosition[pump_ind]
@@ -59,17 +61,18 @@ def function(user, care_area): #user and care_area are strings
                             if tmp_severity > maxSeverity:
                                 data[user][care_area][int(emr.room[i])]["maxSeverity"] = tmp_severity
 
-                            data[user][care_area][int(emr.room[i])]["pumps"][pump_ind] = {
+                            data[user][care_area][int(emr.room[i])]["Pumps"][pump_ind] = {
                             "pumpID" : int(pumps.pumpID[i]),
                             "drug" : pumps.drug[i],
                             "currentRate" : float(pumps.currentRate[i]),
                             "startVolume" : int(pumps.startVolume[i]),
                             "alarm" : int(pumps.alarm[i]),
                             "alarm_severity" : tmp_severity,
-                            "alarm_text" : "No alarm"
-                            "time_left" : "tbd", #new
-                            "projected_end_time" : "tbd", #new
-                            "percent_complete" : "tbd" #new
+                            "alarm_text" : "No alarm",
+                            "volume_left" : str(pumps.startVolume[i]), #new
+                            "time_left" : str(round(pumps.startVolume[i] * 0.62)) + 'minutes',  #new
+                            "projected_end_time" : (datetime.now() + timedelta(minutes=round(pumps.startVolume[i] * 0.62))).strftime("%H:%M:%S"), #new
+                            "percent_complete" : 0 #new
                             }
                     else:
                         data[user][care_area][int(emr.room[i])] = {
@@ -79,32 +82,34 @@ def function(user, care_area): #user and care_area are strings
                         "age" : int(emr.age[i]),
                         "sex" : emr.sex[i],
                         "n_pumps" : "tbd",
-                        "pumps" : {}
+                        "Pumps" : {}
                         }
                 else:
                     data[user][care_area] = {}
             else:
                 data[user] = {
-                "name" : "Tram Nguyen", #change this after you create user database
+                "name" : "Thu Le", #change this after you create user database
                 "password" : "123456",
-                "n_patients" : len(list(set(emr.patient))) #total number of pumps in care area
+                "n_patients" : int(len(list(set(emr.patient))) + 1) #total number of pumps in care area
                 }
 
     return alerts, human_alerts, data
 
 
-y, hy, data = function("nnguy22", "careArea")
+y, hy, data = function("lthu", "careArea")
 #for i in hy: print(i)
 
+with open('tmp2.json', 'w') as fp:
+    json.dump(data, fp)
 
 
 #print(type(data))
-
+'''
 fb = firebase.FirebaseApplication("https://baxtersmartroom-default-rtdb.firebaseio.com/", None)
 result = fb.post("users/", data)
 #result = fb.put("users/", 'Name', )
 print(result)
-
+'''
 
 #add pump data in SEPARATE JSON FILE 😡
 
@@ -122,7 +127,7 @@ goal_data = {
                 "age" : 21,
                 "sex" : "f",
                 "n_pumps" : 3, #total number of pumps on patient
-                "pumps" : {
+                "Pumps" : {
                     1: {
                         "pumpID" : 18696786,
                         "drug" : "naloxone_0.4mg_1mL",
