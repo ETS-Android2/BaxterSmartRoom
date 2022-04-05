@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from functions import function
 import json
 
 # ------------------------------------------------------------------------------
@@ -45,6 +44,7 @@ def synthesize(users, alib, dlib, names, p_of_alarm = 0.2, n_care_areas=1, n_pat
     age = []
     sex = []
     patient = []
+    namenum = 2
 
     # --------------------------------------------------------------------------
     # iterate through every pump and synthesize patient data
@@ -57,6 +57,13 @@ def synthesize(users, alib, dlib, names, p_of_alarm = 0.2, n_care_areas=1, n_pat
                 nPumpsPerPatient = 1
         else:
             nPumpsPerPatient = round(int(avgPumpsPerPatient) * int(np.random.randint(1,5)))
+
+        #let's rarely (1 in 4 chance) have lots of pumps
+        if np.random.randint(0,4) == 0: #1 in 4 chance
+            if np.random.randint(0,2) > 0:
+                nPumpsPerPatient = int(np.random.randint(30,33))
+            else:
+                nPumpsPerPatient = int(np.random.randint(20,25))
 
         counter = 0 #resets to zero everyime new patient begins
 
@@ -84,14 +91,14 @@ def synthesize(users, alib, dlib, names, p_of_alarm = 0.2, n_care_areas=1, n_pat
 
             if counter == 0: #randomly generate if counter is zero because counter resets at the start of each patient iteration
                 if np.random.randint(0,2) > 0:
-                    Sex = 'm'
+                    Sex = 'Male'
                     maleNameIndex = int(np.random.randint(0,len(names[0])))
                     lastNameIndex = np.random.randint(0,len(names[2]))
                     fullName = names[0][maleNameIndex] + ' ' + names[2][lastNameIndex]
                     PatientID = int(np.random.randint(20000, 60000))
                     Age = int(np.random.randint(10, 90))
                 else:
-                    Sex = 'f'
+                    Sex = 'Female'
                     femaleNameIndex = int(np.random.randint(0,len(names[1])))
                     lastNameIndex = int(np.random.randint(0,len(names[2])))
                     fullName = names[1][femaleNameIndex] + ' ' + names[2][lastNameIndex]
@@ -99,7 +106,12 @@ def synthesize(users, alib, dlib, names, p_of_alarm = 0.2, n_care_areas=1, n_pat
                     Age = int(np.random.randint(10, 90))
 
                 sex.append(Sex)
-                patient.append(fullName)
+                if fullName not in patient:
+                    patient.append(fullName)
+                else:
+                    patient.append(fullName + str(namenum))
+                    namenum = namenum + 1
+
                 patientID.append(PatientID)
                 age.append(Age)
 
@@ -135,4 +147,4 @@ def synthesize(users, alib, dlib, names, p_of_alarm = 0.2, n_care_areas=1, n_pat
     return None
 
 
-synthesize(users, alib, dlib, names, n_patients=7)
+synthesize(users, alib, dlib, names, n_patients=11)
