@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -32,6 +33,20 @@ public class PatientActivity3 extends SwipeActivity {
         Patient2 = findViewById(R.id.Patient2);
         Patient3 = findViewById(R.id.Patient3);
         Patient4 = findViewById(R.id.Patient4);
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference usersRef = rootRef.child("users");
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    key = ds.getKey();
+                    Log.d("TAG", key);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
         Patient5 = findViewById(R.id.Patient5);
         Patient6 = findViewById(R.id.Patient6);
         Patient7 = findViewById(R.id.Patient7);

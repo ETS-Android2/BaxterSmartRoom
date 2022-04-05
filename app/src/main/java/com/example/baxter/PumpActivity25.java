@@ -2,6 +2,7 @@ package com.example.baxter;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -46,7 +47,20 @@ public class PumpActivity25 extends SwipeActivity {
         backbutton = findViewById(R.id.BackButton);
         homebutton = findViewById(R.id.HomeButton);
         fwdbutton=findViewById(R.id.ForwardButton);
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference usersRef = rootRef.child("users");
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    key = ds.getKey();
+                    Log.d("TAG", key);
+                }
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
         Pump1Rate = findViewById(R.id.Pump1Rate);
         Pump2Rate = findViewById(R.id.Pump2Rate);
         Pump3Rate = findViewById(R.id.Pump3Rate);

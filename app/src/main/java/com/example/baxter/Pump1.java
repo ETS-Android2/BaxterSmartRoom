@@ -1,8 +1,10 @@
 package com.example.baxter;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +41,20 @@ ProgressBar pct;
         backbutton = findViewById(R.id.BackButton);
         drugg = findViewById(R.id.drug);
         ratee = findViewById(R.id.rate);
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference usersRef = rootRef.child("users");
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    key = ds.getKey();
+                    Log.d("TAG", key);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
         startVolumel = findViewById(R.id.startVolume);
         IDD = findViewById(R.id.pumpID);
         timeleft = findViewById(R.id.timeleft);
@@ -123,21 +139,9 @@ ProgressBar pct;
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                colorss= snapshot.child("alarm_severity").getValue().toString();
-                int colors = Integer.parseInt(colorss);
-                if (colors == 1) {
-                    Layout1.setBackgroundResource(R.color.yellow);
-                } else if (colors ==2){
-                    Layout1.setBackgroundResource(R.color.orange);
-                } else if (colors == 3){
-                    Layout1.setBackgroundResource(R.color.red);
-                } else {
-                    Layout1.setBackgroundResource(R.color.green);
-                }
                 String drugup= snapshot.child("drug").getValue().toString();
                 String rateup= snapshot.child("currentRate").getValue().toString();
                 String startVolumeup= snapshot.child("startVolume").getValue().toString();
-                String alarm_textup= snapshot.child("alarm_text").getValue().toString();
                 String IDup= snapshot.child("pumpID").getValue().toString();
                 String pct1= snapshot.child("percent_complete").getValue().toString();
                 int percent = Integer.parseInt(pct1);
@@ -152,13 +156,67 @@ ProgressBar pct;
                 ratee.setText("Current Rate: "+rateup);
                 startVolumel.setText("Start Volume: "+startVolumeup);
                 IDD.setText("Pump ID: "+IDup);
-                alarmtext.setText(alarm_textup);
             }
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
 
                 }
             });
+        DatabaseReference reference3 = FirebaseDatabase.getInstance().getReference().child("users")
+                .child(key).child(user).child("careArea").child(ptindexx).child("Pumps").child(pindexx);
+        reference3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                colorss= snapshot.child("alarm_severity").getValue().toString();
+                int colors = Integer.parseInt(colorss);
+                if (colors == 1) {
+                    Layout1.setBackgroundResource(R.color.yellow);
+                    AlertDialog alertDialog = new AlertDialog.Builder(Pump1.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage(alarm_text);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.yellow);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                } else if (colors ==2){
+                    Layout1.setBackgroundResource(R.color.orange);
+                    AlertDialog alertDialog = new AlertDialog.Builder(Pump1.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage(alarm_text);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.orange);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                } else if (colors == 3){
+                    Layout1.setBackgroundResource(R.color.red);
+                    AlertDialog alertDialog = new AlertDialog.Builder(Pump1.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage(alarm_text);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.red);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                } else {
+                    Layout1.setBackgroundResource(R.color.green);
+                }
+                String alarm_textup= snapshot.child("alarm_text").getValue().toString();
+                alarmtext.setText(alarm_textup);
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         drugg.setText(drug);
         ratee.setText(rate);

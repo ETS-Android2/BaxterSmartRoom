@@ -76,6 +76,20 @@ public class PatientActivity2 extends SwipeActivity {
             patient = grabdata.getStringExtra("patients");
             user = grabdata.getStringExtra("user");
             key = grabdata.getStringExtra("key");
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+            DatabaseReference usersRef = rootRef.child("users");
+            ValueEventListener valueEventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                        key = ds.getKey();
+                        Log.d("TAG", key);
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
             patients = Integer.parseInt(patient);
             Log.d("patients", patient);
             if ((double) patients/8<=2 ) {

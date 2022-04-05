@@ -1,5 +1,6 @@
 package com.example.baxter;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -70,7 +72,20 @@ public class PumpActivity1 extends SwipeActivity {
         Pump6pct = findViewById(R.id.pct6);
         Pump7pct = findViewById(R.id.pct7);
         Pump8pct = findViewById(R.id.pct8);
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference usersRef = rootRef.child("users");
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    key = ds.getKey();
+                    Log.d("TAG", key);
+                }
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
         Pump1startVolume = findViewById(R.id.Pump1startVolume);
         Pump2startVolume = findViewById(R.id.Pump2startVolume);
         Pump3startVolume = findViewById(R.id.Pump3startVolume);
@@ -133,6 +148,44 @@ public class PumpActivity1 extends SwipeActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String maxsev = snapshot.child("maxSeverity").getValue().toString();
+                String maxalarm = snapshot.child("maxSeverity").getValue().toString();
+                int colors = Integer.parseInt(maxsev);
+                if (colors == 1) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(PumpActivity1.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage(maxalarm);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.yellow);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                } else if (colors ==2){
+                    AlertDialog alertDialog = new AlertDialog.Builder(PumpActivity1.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage(maxalarm);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.orange);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                } else if (colors == 3){
+                    AlertDialog alertDialog = new AlertDialog.Builder(PumpActivity1.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage(maxalarm);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.red);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                } else {
+                }
                 if (Pumps >= 1) {
                     String pct1 = snapshot.child("1").child("percent_complete").getValue().toString();
                     int percent1 = Integer.parseInt(pct1);

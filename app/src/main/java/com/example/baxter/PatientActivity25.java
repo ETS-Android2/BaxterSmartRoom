@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -71,10 +72,25 @@ public class PatientActivity25 extends SwipeActivity {
         fwdbutton = findViewById(R.id.ForwardButton);
         homebutton = findViewById(R.id.HomeButton);
         backbutton = findViewById(R.id.BackButton);
+
         Intent grabdata = getIntent();
         patient = grabdata.getStringExtra("patients");
         user = grabdata.getStringExtra("user");
         key = grabdata.getStringExtra("key");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference usersRef = rootRef.child("users");
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    key = ds.getKey();
+                    Log.d("TAG", key);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
         patients = Integer.parseInt(patient);
         if ((double)(patients)/8<=3 ) {
             fwdbutton.setEnabled(false);

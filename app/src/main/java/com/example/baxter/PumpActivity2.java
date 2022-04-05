@@ -197,7 +197,20 @@ int pumpsthisact, Pumps;
         Pump2.setVisibility(View.INVISIBLE);
         Pump1.setEnabled(false);
         Pump1.setVisibility(View.INVISIBLE);
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference usersRef = rootRef.child("users");
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    key = ds.getKey();
+                    Log.d("TAG", key);
+                }
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users")
                 .child(key).child(user).child("careArea").child(ptindex).child("Pumps");
         reference.addValueEventListener(new ValueEventListener() {
