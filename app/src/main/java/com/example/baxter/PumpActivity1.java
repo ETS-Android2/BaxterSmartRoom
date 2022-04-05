@@ -2,8 +2,10 @@ package com.example.baxter;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,7 +21,7 @@ public class PumpActivity1 extends SwipeActivity {
     RelativeLayout Pump1, Pump2, Pump3, Pump4, Pump5, Pump6, Pump7, Pump8;
     TextView Pump1Rate ,Pump1drug,Pump1startVolume,Pump2Rate,Pump2drug,Pump2startVolume,Pump5Rate ,Pump5drug,Pump5startVolume,Pump3Rate ,Pump3drug,Pump3startVolume,
             Pump4Rate ,Pump4drug,Pump4startVolume,Pump6Rate ,Pump6drug,Pump6startVolume,Pump7Rate ,Pump7drug,Pump7startVolume,Pump8Rate ,Pump8drug,Pump8startVolume;
-
+    ProgressBar Pump1pct, Pump2pct, Pump3pct, Pump4pct, Pump5pct, Pump6pct, Pump7pct, Pump8pct;
     Button fwdbutton, homebutton;
     String ptindex, patient, Pumpp, user, key, alarm1, alarm_severity1, alarm_text1, Pump1drugstr, Pump1Ratestr, Pump1startVolumestr, Pump1ID,
             alarm2, alarm_severity2, alarm_text2, Pump2drugstr, Pump2Ratestr, Pump2startVolumestr, Pump2ID
@@ -59,6 +61,15 @@ public class PumpActivity1 extends SwipeActivity {
         Pump6drug = findViewById(R.id.Pump6drug);
         Pump7drug = findViewById(R.id.Pump7drug);
         Pump8drug = findViewById(R.id.Pump8drug);
+
+        Pump1pct = findViewById(R.id.pct1);
+        Pump2pct = findViewById(R.id.pct2);
+        Pump3pct = findViewById(R.id.pct3);
+        Pump4pct = findViewById(R.id.pct4);
+        Pump5pct = findViewById(R.id.pct5);
+        Pump6pct = findViewById(R.id.pct6);
+        Pump7pct = findViewById(R.id.pct7);
+        Pump8pct = findViewById(R.id.pct8);
 
         Pump1startVolume = findViewById(R.id.Pump1startVolume);
         Pump2startVolume = findViewById(R.id.Pump2startVolume);
@@ -123,6 +134,9 @@ public class PumpActivity1 extends SwipeActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (Pumps >= 1) {
+                    String pct1 = snapshot.child("1").child("percent_complete").getValue().toString();
+                    int percent1 = Integer.parseInt(pct1);
+                    Pump1pct.setProgress(percent1);
                     Pump1drugstr = snapshot.child("1").child("drug").getValue().toString();
                     Pump1Ratestr = snapshot.child("1").child("currentRate").getValue().toString();
                     Pump1startVolumestr = snapshot.child("1").child("startVolume").getValue().toString();
@@ -150,6 +164,9 @@ public class PumpActivity1 extends SwipeActivity {
                     Pump1.setVisibility(View.VISIBLE);
                 }
                 if (Pumps >= 2) {
+                    String pct2 = snapshot.child("2").child("percent_complete").getValue().toString();
+                    int percent2 = Integer.parseInt(pct2);
+                    Pump2pct.setProgress(percent2);
                     Pump2drugstr = snapshot.child("2").child("drug").getValue(String.class);
                     Pump2Ratestr = snapshot.child("2").child("currentRate").getValue().toString();
                     Pump2startVolumestr = snapshot.child("2").child("startVolume").getValue().toString();
@@ -176,6 +193,9 @@ public class PumpActivity1 extends SwipeActivity {
 
                 }
                 if (Pumps >= 3){
+                    String pct1 = snapshot.child("3").child("percent_complete").getValue().toString();
+                    int percent1 = Integer.parseInt(pct1);
+                    Pump3pct.setProgress(percent1);
                     Pump3drugstr = snapshot.child("3").child("drug").getValue(String.class);
                     Pump3Ratestr = snapshot.child("3").child("currentRate").getValue().toString();
                     Pump3startVolumestr = snapshot.child("3").child("startVolume").getValue().toString();
@@ -201,6 +221,9 @@ public class PumpActivity1 extends SwipeActivity {
                     Pump3.setVisibility(View.VISIBLE);
                 }
                 if (Pumps >= 4){
+                    String pct1 = snapshot.child("4").child("percent_complete").getValue().toString();
+                    int percent1 = Integer.parseInt(pct1);
+                    Pump4pct.setProgress(percent1);
                     String Pump4drugstr = snapshot.child("4").child("drug").getValue(String.class);
                     String Pump4Ratestr = snapshot.child("4").child("currentRate").getValue().toString();
                     String Pump4startVolumestr = snapshot.child("4").child("startVolume").getValue().toString();
@@ -228,6 +251,9 @@ public class PumpActivity1 extends SwipeActivity {
 
                 }
                 if (Pumps >= 5){
+                    String pct1 = snapshot.child("5").child("percent_complete").getValue().toString();
+                    int percent1 = Integer.parseInt(pct1);
+                    Pump5pct.setProgress(percent1);
                     String color5 = snapshot.child("5").child("alarm_severity").getValue().toString();
                     int colors5 = Integer.parseInt(color5);
                     if (colors5 == 1) {
@@ -254,6 +280,9 @@ public class PumpActivity1 extends SwipeActivity {
                     alarm_text5 = snapshot.child("5").child("alarm_text").getValue(String.class);
                 }
                 if (Pumps >= 6) {
+                    String pct1 = snapshot.child("6").child("percent_complete").getValue().toString();
+                    int percent1 = Integer.parseInt(pct1);
+                    Pump6pct.setProgress(percent1);
                     String color6 = snapshot.child("6").child("alarm_severity").getValue().toString();
                     int colors6 = Integer.parseInt(color6);
                     if (colors6 == 1) {
@@ -280,6 +309,9 @@ public class PumpActivity1 extends SwipeActivity {
                     alarm_text6 = snapshot.child("6").child("alarm_text").getValue(String.class);
                 }
                 if (Pumps >= 7){
+                    String pct1 = snapshot.child("7").child("percent_complete").getValue().toString();
+                    int percent1 = Integer.parseInt(pct1);
+                    Pump7pct.setProgress(percent1);
                     String color7 = snapshot.child("7").child("alarm_severity").getValue().toString();
                     int colors7 = Integer.parseInt(color7);
                     if (colors7 == 1) {
@@ -306,6 +338,9 @@ public class PumpActivity1 extends SwipeActivity {
 
                 }
                 if (Pumps >= 8) {
+                    String pct1 = snapshot.child("8").child("percent_complete").getValue().toString();
+                    int percent1 = Integer.parseInt(pct1);
+                    Pump8pct.setProgress(percent1);
                     String color8 = snapshot.child("8").child("alarm_severity").getValue().toString();
                     int colors8 = Integer.parseInt(color8);
                     if (colors8 == 1) {
@@ -347,6 +382,7 @@ public class PumpActivity1 extends SwipeActivity {
                 Intent intent = new Intent(PumpActivity1.this, Pump1.class);
                 intent.putExtra("alarm", alarm1);
                 intent.putExtra("Pump", Pumpp);
+                intent.putExtra("pindex", "1");
                 intent.putExtra("ptindex", ptindex);
                 intent.putExtra("alarm_severity", alarm_severity1);
                 intent.putExtra("drug", Pump1drugstr);
@@ -367,7 +403,9 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm", alarm2);
                 intent.putExtra("alarm_severity", alarm_severity2);
                 intent.putExtra("drug", Pump2drugstr);
-                intent.putExtra("ptindex", ptindex); intent.putExtra("Pump", Pumpp);
+                intent.putExtra("ptindex", ptindex);
+                intent.putExtra("Pump", Pumpp);
+                intent.putExtra("pindex", "2");
                 intent.putExtra("rate", Pump2Ratestr);
                 intent.putExtra("startVolume", Pump2startVolumestr);
                 intent.putExtra("ID", Pump2ID);
@@ -386,7 +424,9 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm_severity", alarm_severity3);
                 intent.putExtra("drug", Pump3drugstr);
                 intent.putExtra("rate", Pump3Ratestr);
-                intent.putExtra("ptindex", ptindex); intent.putExtra("Pump", Pumpp);
+                intent.putExtra("ptindex", ptindex);
+                intent.putExtra("Pump", Pumpp);
+                intent.putExtra("pindex", "3");
                 intent.putExtra("startVolume", Pump3startVolumestr);
                 intent.putExtra("ID", Pump3ID);
                 intent.putExtra("alarm_text", alarm_text3);
@@ -403,7 +443,9 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm", alarm4);
                 intent.putExtra("alarm_severity", alarm_severity4);
                 intent.putExtra("drug", Pump4drugstr);
-                intent.putExtra("ptindex", ptindex); intent.putExtra("Pump", Pumpp);
+                intent.putExtra("ptindex", ptindex);
+                intent.putExtra("Pump", Pumpp);
+                intent.putExtra("pindex", "4");
                 intent.putExtra("rate", Pump4Ratestr);
                 intent.putExtra("startVolume", Pump4startVolumestr);
                 intent.putExtra("ID", Pump4ID);
@@ -422,6 +464,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm_severity", alarm_severity5);
                 intent.putExtra("drug", Pump5drugstr);
                 intent.putExtra("ptindex", ptindex); intent.putExtra("Pump", Pumpp);
+                intent.putExtra("pindex", "5");
                 intent.putExtra("rate", Pump5Ratestr);
                 intent.putExtra("startVolume", Pump5startVolumestr);
                 intent.putExtra("ID", Pump5ID);
@@ -440,6 +483,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("alarm_severity", alarm_severity6);
                 intent.putExtra("drug", Pump6drugstr);
                 intent.putExtra("ptindex", ptindex); intent.putExtra("Pump", Pumpp);
+                intent.putExtra("pindex", "6");
                 intent.putExtra("rate", Pump6Ratestr);
                 intent.putExtra("startVolume", Pump6startVolumestr);
                 intent.putExtra("ID", Pump6ID);
@@ -459,6 +503,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("drug", Pump7drugstr);
                 intent.putExtra("rate", Pump7Ratestr);
                 intent.putExtra("ptindex", ptindex); intent.putExtra("Pump", Pumpp);
+                intent.putExtra("pindex", "7");
                 intent.putExtra("startVolume", Pump7startVolumestr);
                 intent.putExtra("ID", Pump7ID);
                 intent.putExtra("alarm_text", alarm_text7);
@@ -477,6 +522,7 @@ public class PumpActivity1 extends SwipeActivity {
                 intent.putExtra("drug", Pump8drugstr);
                 intent.putExtra("rate", Pump8Ratestr);
                 intent.putExtra("ptindex", ptindex); intent.putExtra("Pump", Pumpp);
+                intent.putExtra("pindex", "8");
                 intent.putExtra("startVolume", Pump8startVolumestr);
                 intent.putExtra("ID", Pump8ID);
                 intent.putExtra("alarm_text", alarm_text8);
@@ -525,7 +571,7 @@ public class PumpActivity1 extends SwipeActivity {
     @Override
     protected void onSwipeLeft() {
         Intent intent = new Intent(PumpActivity1.this, PumpActivity2.class);
-        intent.putExtra("Pumps", Pumpp);
+        intent.putExtra("Pump", Pumpp);
         intent.putExtra("user", user);
         intent.putExtra("key", key);
         intent.putExtra("patients", patient);

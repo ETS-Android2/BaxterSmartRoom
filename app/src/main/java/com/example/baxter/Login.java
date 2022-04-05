@@ -32,6 +32,21 @@ public class Login extends AppCompatActivity {
         username=findViewById(R.id.username);
         password=findViewById(R.id.password);
         login=findViewById(R.id.login);
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference usersRef = rootRef.child("users");
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    key = ds.getKey();
+                    Log.d("TAG", key);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
+        usersRef.addListenerForSingleValueEvent(valueEventListener);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,13 +108,13 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        String key2 = "-MzmWhp7WMEmmo8TOcq_";
+        /*String key2 = "-MzmWhp7WMEmmo8TOcq_";
         if (key == key2) {
           Log.d("key status", "It worked I got key");
         }  else {
             Log.d("key status", "Duck it failed");
             key = key2;
-        }
+        }*/
         DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users").child(key);
         Query checkUser = reference2.orderByKey().equalTo(userEnteredUsername);
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {

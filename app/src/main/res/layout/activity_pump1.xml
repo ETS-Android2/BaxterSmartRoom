@@ -109,8 +109,9 @@
                             android:text="Alarm text"
                             android:textColor="@color/white"
                             android:textSize="30sp" />
+
                         <TextView
-                            android:id="@+id/pumpID"
+                            android:id="@+id/endtime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/alarmtext"
@@ -119,7 +120,51 @@
                             android:text="PumpID"
                             android:textColor="@color/white"
                             android:textSize="30sp" />
+                        <TextView
+                            android:id="@+id/timeleft"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/endtime"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="PumpID"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+                        <TextView
+                            android:id="@+id/volumeleft"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/timeleft"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="PumpID"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+                        <TextView
+                            android:id="@+id/pumpID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/volumeleft"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="PumpID"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
 
+                        <ProgressBar
+                            android:id="@+id/determinateBar"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pumpID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
                     </RelativeLayout>
 
                 </RelativeLayout>

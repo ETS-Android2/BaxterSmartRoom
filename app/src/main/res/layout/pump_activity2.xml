@@ -24,14 +24,14 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/Pump9"
+                    android:id="@+id/Pump1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_weight="0.60"
-                    android:background="@color/red"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -40,116 +40,59 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView1"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            app:tint="@color/white" />
-
                         <TextView
+                            android:id="@+id/Pump1drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView1"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 1 drug"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump1Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump1drug"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Pump 9"
+                            android:text="Pump 1 Rate"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/Pump1startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump1Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 1 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <ProgressBar
+                            android:id="@+id/pct1"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump1startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
                     </RelativeLayout>
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/Pump10"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.60"
-                    android:background="@color/yellow"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true">
-
-                        <ImageView
-                            android:id="@+id/imgView2"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            app:tint="@color/white" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView2"
-                            android:layout_centerHorizontal="true"
-                            android:text="Pump 10"
-                            android:textColor="@color/white"
-                            android:layout_marginTop="5dp"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1">
-
-                <RelativeLayout
-                    android:id="@+id/Pump11"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.60"
-                    android:background="@color/lime"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true">
-
-                        <ImageView
-                            android:id="@+id/imgView3"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            app:tint="@color/white" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView3"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Pump 11"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/Pump12"
+                    android:id="@+id/Pump2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
@@ -162,25 +105,189 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView4"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            app:tint="@color/white" />
-
                         <TextView
+                            android:id="@+id/Pump2drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView4"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 12"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 2 drug"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump2Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump2drug"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
+                            android:text="Pump 2 Rate"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump2startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump2Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 2 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct2"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump2startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/Pump3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.60"
+                    android:background="@color/green"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/Pump3drug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 3 drug"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump3Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump3drug"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 2 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump3startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump3Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 3 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct3"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump3startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Pump4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.60"
+                    android:background="@color/green"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/Pump4drug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 4 drug"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump4Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump4drug"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 4 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump4startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump4Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 4 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct4"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump4startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
@@ -195,11 +302,11 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/Pump13"
+                    android:id="@+id/Pump5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/blue"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -208,36 +315,63 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView5"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            app:tint="@color/white" />
-
                         <TextView
+                            android:id="@+id/Pump5drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView5"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 13"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 5 drug"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump5Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump5drug"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
+                            android:text="Pump 2 Rate"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump5startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump5Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 2 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct5"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump5startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/Pump14"
+                    android:id="@+id/Pump6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/darkblue"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -246,25 +380,52 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView6"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            app:tint="@color/white" />
-
                         <TextView
+                            android:id="@+id/Pump6drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView6"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 14"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 6 drug"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump6Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump6drug"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
+                            android:text="Pump 6 Rate"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump6startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump6Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 6 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct6"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump6startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
@@ -279,11 +440,11 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/Pump15"
+                    android:id="@+id/Pump7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/darkviolet"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -292,36 +453,63 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView7"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-                            app:tint="@color/white" />
-
                         <TextView
+                            android:id="@+id/Pump7drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView7"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 15"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:text="Pump 7 drug"
                             android:textColor="@color/white"
-                            android:layout_marginTop="5dp"
                             android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump7Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump7drug"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 7 Rate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump7startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump7Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 7 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct7"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump7startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/Pump16"
+                    android:id="@+id/Pump8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/violet"
+                    android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -330,33 +518,58 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
 
-                        <ImageView
-                            android:id="@+id/imgView8"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_centerHorizontal="true"
-                            android:adjustViewBounds="true"
-                            android:padding="8dp"
-                            android:scaleType="centerInside"
-
-                            app:tint="@color/white" />
-
                         <TextView
+                            android:id="@+id/Pump8drug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imgView8"
                             android:layout_centerHorizontal="true"
-                            android:text="Pump 16"
+                            android:adjustViewBounds="true"
+                            android:text="Pump 8 drug"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:id="@+id/Pump8Rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump8drug"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
+                            android:text="Pump 8 Rate"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/Pump8startVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump8Rate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Pump 2 startVolume"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct8"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump8startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
                 </RelativeLayout>
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -401,19 +614,19 @@
                     <Button
                         android:id="@+id/ForwardButton"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
                         android:layout_alignParentRight="true"
+                        android:layout_height="40dp"
                         android:layout_centerVertical="true"
-                        android:text="Next Page" />
+                        android:text="Next Page"/>
 
                 </RelativeLayout>
 
 
             </LinearLayout>
-
         </LinearLayout>
 
     </RelativeLayout>
+
 
 
 </RelativeLayout>

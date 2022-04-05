@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,11 +25,11 @@ public class Pump1 extends AppCompatActivity {
     String pindexx, patient, user, key, ptindexx, Pump, rate, colorss;
     Button homebutton, backbutton;
     RelativeLayout Layout1;
-    TextView drugg, ratee, startVolumel, IDD, alarmtext;
+    TextView timeleft, endtime, volumeleft, drugg, ratee, startVolumel, IDD, alarmtext;
     Spinner dynamicspinner;
     int selected, ptindex, pindex;
     String[] paths = {"Select Pump","Pump 1", "Pump 2", "Pump 3", "Pump 4", "Pump 5", "Pump 6", "Pump 7", "Pump 8"};
-
+ProgressBar pct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,68 +41,13 @@ public class Pump1 extends AppCompatActivity {
         ratee = findViewById(R.id.rate);
         startVolumel = findViewById(R.id.startVolume);
         IDD = findViewById(R.id.pumpID);
+        timeleft = findViewById(R.id.timeleft);
+        pct = findViewById(R.id.determinateBar);
+        endtime = findViewById(R.id.endtime);
+        volumeleft = findViewById(R.id.volumeleft);
         alarmtext = findViewById(R.id.alarmtext);
         Layout1 = findViewById(R.id.Layout1);
         data();
-        /*
-        dynamicspinner =(Spinner) findViewById(R.id.dropdown_menu);
-        ArrayAdapter<String>adapter = new ArrayAdapter (this,
-                android.R.layout.simple_spinner_item,paths);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dynamicspinner.setAdapter(adapter);
-
-        dynamicspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                Log.e("item", (String) parent.getItemAtPosition(position));
-                switch (position) {
-                    case 1:
-                        selected = 1;
-                        // Whatever you want to happen when the first item gets selected
-                        break;
-                    case 0:
-                        selected = 0;
-                        // Whatever you want to happen when the second item gets selected
-                        break;
-                    case 2:
-                        selected = 2;
-                        // Whatever you want to happen when the thrid item gets selected
-                        break;
-                    case 3:
-                        selected = 3;
-                        // Whatever you want to happen when the first item gets selected
-                        break;
-                    case 4:
-                        selected = 4;
-                        // Whatever you want to happen when the second item gets selected
-                        break;
-                    case 5:
-                        selected = 5;
-                        // Whatever you want to happen when the thrid item gets selected
-                        break;
-                    case 6:
-                        selected = 6;
-                        // Whatever you want to happen when the second item gets selected
-                        break;
-                    case 7:
-                        selected = 7;
-                        // Whatever you want to happen when the thrid item gets selected
-                        break;
-                    case 8:
-                        selected = 8;
-                        // Whatever you want to happen when the thrid item gets selected
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
-
-*/
         clickListen();
     }
 
@@ -143,6 +89,7 @@ public class Pump1 extends AppCompatActivity {
         String alarm_severity = grabdata.getStringExtra("alarm_severity");
         String drug = grabdata.getStringExtra("drug");
         pindexx = grabdata.getStringExtra("pindex");
+        Log.d("pindex", pindexx);
         Pump = grabdata.getStringExtra("Pump");
         rate = grabdata.getStringExtra("rate");
         String startVolume = grabdata.getStringExtra("startVolume");
@@ -172,7 +119,7 @@ public class Pump1 extends AppCompatActivity {
             }
         });
        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users")
-                .child(key).child(user).child("careArea").child(ptindexx).child("pumps").child(pindexx);
+                .child(key).child(user).child("careArea").child(ptindexx).child("Pumps").child(pindexx);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -192,10 +139,19 @@ public class Pump1 extends AppCompatActivity {
                 String startVolumeup= snapshot.child("startVolume").getValue().toString();
                 String alarm_textup= snapshot.child("alarm_text").getValue().toString();
                 String IDup= snapshot.child("pumpID").getValue().toString();
+                String pct1= snapshot.child("percent_complete").getValue().toString();
+                int percent = Integer.parseInt(pct1);
+                pct.setProgress(percent);
+                String endtime1= snapshot.child("projected_end_time").getValue().toString();
+                String timeleft1= snapshot.child("time_left").getValue().toString();
+                String volumeleft1= snapshot.child("volume_left").getValue().toString();
+                endtime.setText("End Time: "+endtime1);
+                timeleft.setText("Time Left: "+timeleft1);
+                volumeleft.setText("Volume Left: "+volumeleft1);
                 drugg.setText(drugup);
-                ratee.setText(rateup);
-                startVolumel.setText(startVolumeup);
-                IDD.setText(IDup);
+                ratee.setText("Current Rate: "+rateup);
+                startVolumel.setText("Start Volume: "+startVolumeup);
+                IDD.setText("Pump ID: "+IDup);
                 alarmtext.setText(alarm_textup);
             }
                 @Override

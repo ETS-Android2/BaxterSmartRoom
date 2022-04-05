@@ -50,6 +50,7 @@
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             android:scaleType="centerInside" />
+
                         <TextView
                             android:id="@+id/Pump1Rate"
                             android:layout_width="wrap_content"
@@ -72,6 +73,20 @@
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
+                        <ProgressBar
+                            android:id="@+id/pct1"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump1startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -122,7 +137,20 @@
                             android:text="Pump 2 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
-
+                        <ProgressBar
+                            android:id="@+id/pct2"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump2startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -181,6 +209,20 @@
                             android:text="Pump 3 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct3"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump3startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
@@ -232,6 +274,20 @@
                             android:text="Pump 4 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct4"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump4startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
@@ -291,6 +347,20 @@
                             android:text="Pump 2 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct5"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump5startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
@@ -342,6 +412,20 @@
                             android:text="Pump 6 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct6"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump6startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
@@ -375,10 +459,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Pump 7 drug"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/Pump7Rate"
@@ -401,6 +485,20 @@
                             android:text="Pump 7 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct7"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump7startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
 
                     </RelativeLayout>
 
@@ -452,6 +550,21 @@
                             android:text="Pump 2 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+                        <ProgressBar
+                            android:id="@+id/pct8"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Pump8startVolume"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:progress="0" />
+
                     </RelativeLayout>
 
                 </RelativeLayout>

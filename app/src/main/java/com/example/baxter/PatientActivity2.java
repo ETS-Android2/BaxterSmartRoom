@@ -18,11 +18,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class PatientActivity2 extends SwipeActivity {
-        RelativeLayout Patient1, Patient2, Patient3, Patient4, Patient5, Patient6, Patient7, Patient8;
-        TextView pt1age, pt1name, pt1sex, pt2age, pt2name, pt2sex, pt5age, pt5name, pt5sex, pt3age, pt3name, pt3sex,
-                pt4age, pt4name, pt4sex, pt6age, pt6name, pt6sex, pt7age, pt7name, pt7sex, pt8age, pt8name, pt8sex;
-        String patient, user, key, pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8;
-        Button fwdbutton, backbutton, homebutton;
+    RelativeLayout Patient1, Patient2, Patient3, Patient4, Patient5, Patient6, Patient7, Patient8;
+    TextView pt1age,pt1name,pt1sex,pt2age,pt2name,pt2sex,pt5age,pt5name,pt5sex,pt3age,pt3name,pt3sex,
+            pt4age,pt4name,pt4sex,pt6age,pt6name,pt6sex,pt7age,pt7name,pt7sex,pt8age,pt8name,pt8sex, pt1ID, pt2ID, pt3ID, pt4ID, pt5ID, pt6ID, pt7ID, pt8ID;
+    String patient, user, key, pump1,pump2,pump3,pump4,pump5,pump6,pump7,pump8;
+    Button fwdbutton, backbutton, homebutton;
         int patients, patientthisact;
 
         @Override
@@ -61,6 +61,14 @@ public class PatientActivity2 extends SwipeActivity {
             pt6sex = findViewById(R.id.pt6sex);
             pt7sex = findViewById(R.id.pt7sex);
             pt8sex = findViewById(R.id.pt8sex);
+            pt1ID=findViewById(R.id.pt1ID);
+            pt2ID=findViewById(R.id.pt2ID);
+            pt3ID=findViewById(R.id.pt3ID);
+            pt4ID=findViewById(R.id.pt4ID);
+            pt5ID=findViewById(R.id.pt5ID);
+            pt6ID=findViewById(R.id.pt6ID);
+            pt7ID=findViewById(R.id.pt7ID);
+            pt8ID=findViewById(R.id.pt8ID);
             fwdbutton = findViewById(R.id.ForwardButton);
             homebutton = findViewById(R.id.HomeButton);
             backbutton = findViewById(R.id.BackButton);
@@ -132,6 +140,8 @@ public class PatientActivity2 extends SwipeActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (patientthisact >= 1) {
+                        String pt1IDstr = snapshot.child("9").child("patientID").getValue().toString();
+                        pt1ID.setText("Patient ID: "+pt1IDstr);
                         String pt1namestr = snapshot.child("9").child("name").getValue().toString();
                         ;
                         String pt1agestr = snapshot.child("9").child("age").getValue().toString();
@@ -155,6 +165,8 @@ public class PatientActivity2 extends SwipeActivity {
                         Patient1.setVisibility(View.VISIBLE);
                     }
                     if (patientthisact >= 2) {
+                        String pt1IDstr = snapshot.child("10").child("patientID").getValue().toString();
+                        pt2ID.setText("Patient ID: "+pt1IDstr);
                         String pt2namestr = snapshot.child("10").child("name").getValue().toString();
                         ;
                         String pt2agestr = snapshot.child("10").child("age").getValue().toString();
@@ -179,6 +191,8 @@ public class PatientActivity2 extends SwipeActivity {
                         Patient2.setVisibility(View.VISIBLE);
                     }
                     if (patientthisact >= 3) {
+                        String pt1IDstr = snapshot.child("11").child("patientID").getValue().toString();
+                        pt3ID.setText("Patient ID: "+pt1IDstr);
                         String pt3namestr = snapshot.child("11").child("name").getValue().toString();
                         ;
                         String pt3agestr = snapshot.child("11").child("age").getValue().toString();
@@ -204,6 +218,8 @@ public class PatientActivity2 extends SwipeActivity {
 
                     }
                     if (patientthisact >= 4) {
+                        String pt1IDstr = snapshot.child("12").child("patientID").getValue().toString();
+                        pt4ID.setText("Patient ID: "+pt1IDstr);
                         String pt4namestr = snapshot.child("12").child("name").getValue().toString();
                         ;
                         String pt4agestr = snapshot.child("12").child("age").getValue().toString();
@@ -228,6 +244,8 @@ public class PatientActivity2 extends SwipeActivity {
                         Patient4.setVisibility(View.VISIBLE);
                     }
                     if (patientthisact >= 5) {
+                        String pt1IDstr = snapshot.child("13").child("patientID").getValue().toString();
+                        pt5ID.setText("Patient ID: "+pt1IDstr);
                         String pt5namestr = snapshot.child("13").child("name").getValue().toString();
                         ;
                         String pt5agestr = snapshot.child("13").child("age").getValue().toString();
@@ -252,6 +270,8 @@ public class PatientActivity2 extends SwipeActivity {
                         }
                     }
                     if (patientthisact >= 6) {
+                        String pt1IDstr = snapshot.child("14").child("patientID").getValue().toString();
+                        pt6ID.setText("Patient ID: "+pt1IDstr);
                         String pt6namestr = snapshot.child("14").child("name").getValue().toString();
                         ;
                         String pt6agestr = snapshot.child("14").child("age").getValue().toString();
@@ -276,6 +296,8 @@ public class PatientActivity2 extends SwipeActivity {
                         }
                     }
                     if (patientthisact >= 7) {
+                        String pt1IDstr = snapshot.child("15").child("patientID").getValue().toString();
+                        pt7ID.setText("Patient ID: "+pt1IDstr);
                         String pt7namestr = snapshot.child("15").child("name").getValue().toString();
                         ;
                         String pt7agestr = snapshot.child("15").child("age").getValue().toString();
@@ -301,6 +323,8 @@ public class PatientActivity2 extends SwipeActivity {
 
                     }
                     if (patientthisact == 8) {
+                        String pt1IDstr = snapshot.child("16").child("patientID").getValue().toString();
+                        pt8ID.setText("Patient ID: "+pt1IDstr);
                         String pt8namestr = snapshot.child("16").child("name").getValue().toString();
                         ;
                         String pt8agestr = snapshot.child("16").child("age").getValue().toString();
@@ -349,7 +373,7 @@ public class PatientActivity2 extends SwipeActivity {
     @Override
     protected void onSwipeLeft() {
         if ((double) patients/8<=2 ) {
-        } else if (patients/8<=3){
+        } else if ((double) patients/8<=3){
                     Intent intent = new Intent(PatientActivity2.this, PatientActivity3.class);
                     intent.putExtra("user", user);
                     intent.putExtra("key", key);
@@ -507,7 +531,7 @@ public class PatientActivity2 extends SwipeActivity {
                     Intent intent = new Intent(com.example.baxter.PatientActivity2.this, PumpActivity1.class);
                     intent.putExtra("user", user);
                     intent.putExtra("key", key);
-                    intent.putExtra("ptindex", 8);
+                    intent.putExtra("ptindex", "16");
                     intent.putExtra("Pump", pump8);
                     intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);

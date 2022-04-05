@@ -31,7 +31,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/blue"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -46,10 +46,11 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Patient 1 Name"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
+
                         <TextView
                             android:id="@+id/pt1age"
                             android:layout_width="wrap_content"
@@ -69,6 +70,17 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:text="Patient 1 Sex"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/pt1ID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pt1sex"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Patient 1 ID"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -96,10 +108,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Patient 2 Name"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/pt2age"
@@ -123,6 +135,16 @@
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/pt2ID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pt2sex"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Patient 1 ID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -140,7 +162,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/red"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -155,10 +177,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Patient 3 Name"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/pt3age"
@@ -182,6 +204,16 @@
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/pt3ID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pt3sex"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Patient 1 ID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -191,7 +223,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/violet"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -206,10 +238,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Patient 4 Name"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/pt4age"
@@ -233,6 +265,16 @@
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/pt4ID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pt4sex"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Patient 1 ID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -250,7 +292,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/darkblue"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -265,10 +307,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Patient 5 Name"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/pt5age"
@@ -292,6 +334,16 @@
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/pt5ID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pt5sex"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Patient 1 ID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -301,7 +353,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/orange"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -316,10 +368,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Patient 6 Name"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/pt6age"
@@ -343,6 +395,17 @@
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/pt6ID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pt6sex"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Patient 1 ID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -360,7 +423,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/yellow"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -375,10 +438,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Patient 7 Name"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/pt7age"
@@ -402,6 +465,16 @@
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/pt7ID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pt7sex"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Patient 1 ID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -411,7 +484,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/teal"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
@@ -426,10 +499,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Patient 8 Name"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/pt8age"
@@ -452,12 +525,21 @@
                             android:text="Patient 2 Sex"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/pt8ID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pt8sex"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Patient 1 ID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
                     </RelativeLayout>
 
                 </RelativeLayout>
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
