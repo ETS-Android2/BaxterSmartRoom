@@ -3,30 +3,32 @@ import pandas as pd
 import json
 
 # ------------------------------------------------------------------------------
-# load data
-# ------------------------------------------------------------------------------
-
-f = open('users.json')
-users = json.load(f)
-
-alib = pd.read_csv('alarm_flagging.csv')
-dlib = pd.read_csv('drug_library.csv')
-
-m_names = ['John','Aidan','Ben','Feng','Nick','Jack','James','Adam','Neil','Xi']
-f_names = ['Amanda','Carol','Ella','Olivia','Emma','Kate','Hope','Eleanor','Mei']
-l_names = ['Monroe','Adams','Hansen','Li','Turing','Turner','Smith','Bellin','Zhao']
-names = [m_names,f_names,l_names]
-
-#emr.to_csv('emr.csv', index=False)
-
-# ------------------------------------------------------------------------------
 # define synthesize()
 # ------------------------------------------------------------------------------
 
-def synthesize(users, alib, dlib, names, p_of_alarm = 0.2, n_care_areas=1, n_patients=25, avgPumpsPerPatient=4):
+def synthesize(p_of_alarm = 0.2, n_care_areas=1, n_patients=25,
+    avgPumpsPerPatient=4):
     '''
     p_of alarm must be a value between 0 and 1
     '''
+
+    # --------------------------------------------------------------------------
+    # load data
+    # --------------------------------------------------------------------------
+
+    f = open('users.json')
+    users = json.load(f)
+
+    alib = pd.read_csv('alarm_flagging.csv')
+    dlib = pd.read_csv('drug_library.csv')
+
+    m_names = ['John','Aidan','Ben','Feng','Nick','Jack','James','Adam','Neil','Xi','Rakesh','Ramiro','Mike','Jackson']
+    f_names = ['Amanda','Carol','Ella','Olivia','Emma','Kate','Hope','Eleanor','Mei','Karly','Lauren','Jakayla','Becca','Kailee','Sunniva']
+    l_names = ['Monroe','Adams','Hansen','Li','Turing','Turner','Smith','Bellin','Zhao','Gamble','Riley','Parks','Finley','Sheffield']
+    names = [m_names,f_names,l_names]
+
+    #emr.to_csv('emr.csv', index=False)
+
     # --------------------------------------------------------------------------
     # preallocate
     # --------------------------------------------------------------------------
@@ -109,7 +111,8 @@ def synthesize(users, alib, dlib, names, p_of_alarm = 0.2, n_care_areas=1, n_pat
                 if fullName not in patient:
                     patient.append(fullName)
                 else:
-                    patient.append(fullName + str(namenum))
+                    fullName = fullName + ' ' + str(namenum)
+                    patient.append(fullName)
                     namenum = namenum + 1
 
                 patientID.append(PatientID)
@@ -123,6 +126,7 @@ def synthesize(users, alib, dlib, names, p_of_alarm = 0.2, n_care_areas=1, n_pat
                 patient.append(fullName)
                 patientID.append(PatientID)
                 age.append(Age)
+
 
     # --------------------------------------------------------------------------
     # synthesize the CSV
@@ -141,10 +145,9 @@ def synthesize(users, alib, dlib, names, p_of_alarm = 0.2, n_care_areas=1, n_pat
     emr_df = pd.DataFrame(emr_dict)
 
     #convert dataframe to CSV
-    pumps_df.to_csv('pumps_AUTO.csv', index=False)
-    emr_df.to_csv('emr_AUTO.csv', index=False)
+    pumps_df.to_csv('pumps.csv', index=False)
+    emr_df.to_csv('emr.csv', index=False)
 
     return None
 
-
-synthesize(users, alib, dlib, names, n_patients=11)
+#users = synthesize(n_patients=32+20+11+8, userPatientAssign=[32,20,11,8])
