@@ -96,22 +96,6 @@ public class PatientActivity2 extends SwipeActivity {
                 fwdbutton.setEnabled(false);
                 fwdbutton.setVisibility(View.GONE);
                 patientthisact = patients-8;
-            } else if ((double) patients/8<=3){
-                patientthisact = 8;
-                fwdbutton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(PatientActivity2.this, PatientActivity3.class);
-                        intent.putExtra("user", user);
-                        intent.putExtra("key", key);
-                        Log.d("Next act", "Going to 3");
-                        intent.putExtra("patients", patient);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                        startActivity(intent);
-                        finish();
-                    }
-                });
-
             } else {
                 patientthisact = 8;
                 fwdbutton.setOnClickListener(new View.OnClickListener() {
@@ -386,17 +370,7 @@ public class PatientActivity2 extends SwipeActivity {
 
     @Override
     protected void onSwipeLeft() {
-        if ((double) patients/8<=2 ) {
-        } else if ((double) patients/8<=3){
-                    Intent intent = new Intent(PatientActivity2.this, PatientActivity3.class);
-                    intent.putExtra("user", user);
-                    intent.putExtra("key", key);
-                    intent.putExtra("patients", patient);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent);
-                    finish();
 
-        } else {
             Intent intent = new Intent(PatientActivity2.this, PatientActivity25.class);
                     intent.putExtra("user", user);
                     intent.putExtra("key", key);
@@ -406,7 +380,7 @@ public class PatientActivity2 extends SwipeActivity {
                     finish();
 
 
-        }
+
 
     }
 

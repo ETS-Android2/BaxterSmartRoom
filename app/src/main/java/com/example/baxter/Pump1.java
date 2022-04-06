@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -181,6 +183,9 @@ ProgressBar pct;
                             dialog.dismiss();
                         }
                     });
+                    alertDialog.show();
+                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(1000); // 5000 miliseconds = 5 seconds
                 } else if (colors ==2){
                     Layout1.setBackgroundResource(R.color.orange);
                     AlertDialog alertDialog = new AlertDialog.Builder(Pump1.this).create();
@@ -193,6 +198,9 @@ ProgressBar pct;
                             dialog.dismiss();
                         }
                     });
+                    alertDialog.show();
+                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(3000); // 5000 miliseconds = 5 seconds
                 } else if (colors == 3){
                     Layout1.setBackgroundResource(R.color.red);
                     AlertDialog alertDialog = new AlertDialog.Builder(Pump1.this).create();
@@ -205,6 +213,9 @@ ProgressBar pct;
                             dialog.dismiss();
                         }
                     });
+                    alertDialog.show();
+                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(5000); // 5000 miliseconds = 5 seconds
                 } else {
                     Layout1.setBackgroundResource(R.color.green);
                 }

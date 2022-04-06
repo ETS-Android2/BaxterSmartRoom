@@ -1,7 +1,11 @@
 package com.example.baxter;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -206,7 +211,83 @@ public class PumpActivity25 extends SwipeActivity {
         Pump2.setVisibility(View.INVISIBLE);
         Pump1.setEnabled(false);
         Pump1.setVisibility(View.INVISIBLE);
+        DatabaseReference reference22 = FirebaseDatabase.getInstance().getReference().child("users").child(key);
+        reference22.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                patient = snapshot.child(user).child("n_patients").getValue().toString();
 
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        DatabaseReference reference123 = FirebaseDatabase.getInstance().getReference().child("users")
+                .child(key).child(user).child("careArea").child(ptindex);
+        reference123.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String maxsev = snapshot.child("maxSeverity").getValue().toString();
+                String maxalarm = snapshot.child("maxSevPumps").getValue().toString();
+                Log.d("max alarm", maxalarm);
+                Log.d("max sev", maxsev);
+                int colors = Integer.parseInt(maxsev);
+                if (colors == 1) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(PumpActivity25.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage("Check pump (s): " + maxalarm);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.yellow);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialog.show();
+                    Vibrator v = (Vibrator) PumpActivity25.this.getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(1000); // 5000 miliseconds = 5 seconds
+                } else if (colors == 2) {
+                    final MediaPlayer mp = MediaPlayer.create(PumpActivity25.this, R.raw.med);
+                    mp.start();
+                    AlertDialog alertDialog = new AlertDialog.Builder(PumpActivity25.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage("Check pump (s): " + maxalarm);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.orange);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialog.show();
+                    Vibrator v = (Vibrator) PumpActivity25.this.getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(3000); // 5000 miliseconds = 5 seconds
+                } else if (colors == 3) {
+                    final MediaPlayer mp = MediaPlayer.create(PumpActivity25.this, R.raw.hi);
+                    mp.start();
+                    AlertDialog alertDialog = new AlertDialog.Builder(PumpActivity25.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage("Check pump (s): " + maxalarm);
+
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.red);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialog.show();
+                    Vibrator v = (Vibrator) PumpActivity25.this.getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(5000); // 5000 miliseconds = 5 seconds
+                } else { }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users")
                 .child(key).child(user).child("careArea").child(ptindex).child("Pumps");
         reference.addValueEventListener(new ValueEventListener() {

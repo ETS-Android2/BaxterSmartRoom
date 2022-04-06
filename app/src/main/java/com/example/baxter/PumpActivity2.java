@@ -1,7 +1,11 @@
 package com.example.baxter;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -121,22 +126,6 @@ int pumpsthisact, Pumps;
 
                 }
             });
-        } else if ((double)Pumps/8<=3){
-            fwdbutton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    pumpsthisact = 8;
-                    Intent intent = new Intent(PumpActivity2.this, PumpActivity3.class);
-                    intent.putExtra("user", user);
-                    intent.putExtra("key", key);
-                    intent.putExtra("patients", patient);
-                    intent.putExtra("patients", patient);
-                    intent.putExtra("ptindex", ptindex);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent);
-                    finish();
-                }
-            });
         } else {
             pumpsthisact = 8;
             fwdbutton.setOnClickListener(new View.OnClickListener() {
@@ -168,19 +157,6 @@ int pumpsthisact, Pumps;
                 finish();
             }
         });
-        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users").child(key);
-        reference2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                patient = snapshot.child(user).child("n_patients").getValue().toString();
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
         Pump6.setEnabled(false);
         Pump6.setVisibility(View.INVISIBLE);
         Pump7.setEnabled(false);
@@ -197,6 +173,82 @@ int pumpsthisact, Pumps;
         Pump2.setVisibility(View.INVISIBLE);
         Pump1.setEnabled(false);
         Pump1.setVisibility(View.INVISIBLE);
+        DatabaseReference reference123 = FirebaseDatabase.getInstance().getReference().child("users")
+                .child(key).child(user).child("careArea").child(ptindex);
+        reference123.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String maxsev = snapshot.child("maxSeverity").getValue().toString();
+                String maxalarm = snapshot.child("maxSevPumps").getValue().toString();
+                Log.d("max alarm", maxalarm);
+                Log.d("max sev", maxsev);
+                int colors = Integer.parseInt(maxsev);
+                if (colors == 1) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(PumpActivity2.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage("Check pump (s): " + maxalarm);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.yellow);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialog.show();
+                    Vibrator v = (Vibrator) PumpActivity2.this.getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(1000); // 5000 miliseconds = 5 seconds
+                } else if (colors == 2) {
+                    final MediaPlayer mp = MediaPlayer.create(PumpActivity2.this, R.raw.med);
+                    mp.start();
+                    AlertDialog alertDialog = new AlertDialog.Builder(PumpActivity2.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage("Check pump (s): " + maxalarm);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.orange);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialog.show();
+                    Vibrator v = (Vibrator) PumpActivity2.this.getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(3000); // 5000 miliseconds = 5 seconds
+                } else if (colors == 3) {
+                    final MediaPlayer mp = MediaPlayer.create(PumpActivity2.this, R.raw.hi);
+                    mp.start();
+                    AlertDialog alertDialog = new AlertDialog.Builder(PumpActivity2.this).create();
+                    alertDialog.setTitle("Alarm");
+                    alertDialog.setMessage("Check pump (s): " + maxalarm);
+                    alertDialog.getWindow().setBackgroundDrawableResource(R.color.red);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialog.show();
+                    Vibrator v = (Vibrator) PumpActivity2.this.getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(5000); // 5000 miliseconds = 5 seconds
+                } else { }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("users").child(key);
+        reference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                patient = snapshot.child(user).child("n_patients").getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference usersRef = rootRef.child("users");
         ValueEventListener valueEventListener = new ValueEventListener() {
@@ -216,6 +268,7 @@ int pumpsthisact, Pumps;
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 if (Pumps >= 1) {
                     String pct1 = snapshot.child("9").child("percent_complete").getValue().toString();
                     int percent1 = Integer.parseInt(pct1);
@@ -669,19 +722,6 @@ int pumpsthisact, Pumps;
 
     @Override
     protected void onSwipeLeft() {
-        if (Pumps/8<=2 ) {
-        } else if (Pumps/8<=3){
-            Intent intent = new Intent(PumpActivity2.this, PumpActivity3.class);
-            intent.putExtra("user", user);
-            intent.putExtra("key", key);
-            intent.putExtra("patients", patient);
-            intent.putExtra("ptindex", ptindex);
-            intent.putExtra("Pump", Pumpp);
-            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
-            finish();
-
-        } else {
 
             Intent intent = new Intent(PumpActivity2.this, PumpActivity25.class);
             intent.putExtra("user", user);
@@ -694,7 +734,6 @@ int pumpsthisact, Pumps;
             finish();
 
 
-        }
 
 
     }
