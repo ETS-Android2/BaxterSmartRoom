@@ -6,7 +6,7 @@ import json
 # define synthesize()
 # ------------------------------------------------------------------------------
 
-def synthesize(p_of_alarm = 0.2, n_care_areas=1, n_patients=25,
+def synthesize(p_of_alarm = 0.3, n_care_areas=1, n_patients=25,
     avgPumpsPerPatient=4):
     '''
     p_of alarm must be a value between 0 and 1
@@ -78,6 +78,7 @@ def synthesize(p_of_alarm = 0.2, n_care_areas=1, n_patients=25,
             drug.append(dlib.drug[drug_i])
             currentRate.append(round(dlib.maxRate[drug_i] * np.random.randint(10,22) / 20, ndigits=4)) # 1 in 11 chance that pump has a fucked up current rate to start with. this is rounded to the ten-thousandths
             startVolume.append(possible_volumes[np.random.randint(0, len(possible_volumes))])
+            #alarm logic
             if currentRate[-1] > dlib.maxRate[drug_i]:
                 alarm.append(999)
             else:
@@ -148,6 +149,6 @@ def synthesize(p_of_alarm = 0.2, n_care_areas=1, n_patients=25,
     pumps_df.to_csv('pumps.csv', index=False)
     emr_df.to_csv('emr.csv', index=False)
 
-    return None
+    return "success"
 
 #users = synthesize(n_patients=32+20+11+8, userPatientAssign=[32,20,11,8])

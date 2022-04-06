@@ -2,13 +2,13 @@ import numpy as np
 from numpy import random as random
 import pandas as pd
 import json
+import ast
 from datetime import datetime
 from datetime import timedelta
 from firebase import firebase
 from functions import get_index
 from synthesize import synthesize
 
-users = synthesize(n_patients=8)
 
 def function(user, name):
 
@@ -62,13 +62,13 @@ def function(user, name):
                             data[user]["careArea"][int(emr.room[i])]["Pumps"][pump_ind] = {
                             "pumpID" : int(pumps.pumpID[i]),
                             "drug" : pumps.drug[i],
-                            "currentRate" : str(float(pumps.currentRate[i])) + ' mg/min',
-                            "startVolume" : str(int(pumps.startVolume[i])) + ' mL',
+                            "currentRate" : str(float(pumps.currentRate[i])) + " mg/min",
+                            "startVolume" : str(int(pumps.startVolume[i])) + " mL",
                             "alarm" : int(pumps.alarm[i]),
                             "alarm_severity" : severity,
                             "alarm_text" : alib.description[alarmIndex],
-                            "volume_left" : str(pumps.startVolume[i]) + ' mL', #new
-                            "time_left" : str(round(pumps.startVolume[i] * 0.62)) + ' minutes',  #new
+                            "volume_left" : str(pumps.startVolume[i]) + " mL", #new
+                            "time_left" : str(round(pumps.startVolume[i] * 0.62)) + " minutes",  #new
                             "projected_end_time" : (datetime.now() + timedelta(minutes=round(pumps.startVolume[i] * 0.62))).strftime("%H:%M:%S"), #new
                             "percent_complete" : 0 #new
                             }
@@ -116,20 +116,49 @@ def function(user, name):
     return data
 
 
-data = function("orahman","Oishee Rahman")
+def main(userPatientAssign=[32,20,11,8]):
+    f = open('users.json')
+    users = json.load(f)
+    usersList = list(users.keys())
+    dataList = []
 
+    for i in range(len(userPatientAssign)):
+        #synthesize data
+        n_patients = userPatientAssign[i]
+        success = synthesize(n_patients=n_patients)
 
-with open('tmp2.json', 'w') as fp:
+        #generate dictionary and convert to string
+        user = usersList[i]
+        dataString = str(function(user, users[user]["name"]))
+
+        #do string operations
+        dataString = dataString[1:]
+        dataString = dataString[:-1]
+        dataList.append(dataString)
+
+    combinedStrings = '{'
+    for i in range(len(dataList)):
+        if i != (len(dataList) - 1):
+            combinedStrings = combinedStrings + dataList[i] + ', '
+        else:
+            combinedStrings = combinedStrings + dataList[i] + '}'
+
+    data = ast.literal_eval(combinedStrings)
+
+    return data
+
+data = main()
+
+with open('tmp.json', 'w') as fp:
     json.dump(data, fp)
 
-'''
+
 #print(type(data))
 
 fb = firebase.FirebaseApplication("https://baxtersmartroom-default-rtdb.firebaseio.com/", None)
 result = fb.post("users/", data)
 #result = fb.put("users/", 'Name', )
 print(result)
-'''
 
 
 #goal:
