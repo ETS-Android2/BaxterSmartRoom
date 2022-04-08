@@ -36,6 +36,7 @@ public class PumpActivity1 extends SwipeActivity {
             , alarm6, alarm_severity6, alarm_text6, Pump6drugstr, Pump6Ratestr, Pump6startVolumestr, Pump6ID
             , alarm7, alarm_severity7, alarm_text7, Pump7drugstr, Pump7Ratestr, Pump7startVolumestr, Pump7ID
             , alarm8, alarm_severity8, alarm_text8, Pump8drugstr, Pump8Ratestr, Pump8startVolumestr, Pump8ID;
+    int Pumps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,7 +112,7 @@ public class PumpActivity1 extends SwipeActivity {
         key = grabdata.getStringExtra("key");
         patient = grabdata.getStringExtra("patients");
         ptindex = grabdata.getStringExtra("ptindex");
-        int Pumps = Integer.parseInt(Pumpp);
+        Pumps = Integer.parseInt(Pumpp);
         if (Pumps <= 8) {
             fwdbutton.setEnabled(false);
             fwdbutton.setVisibility(View.GONE);
@@ -145,7 +146,9 @@ public class PumpActivity1 extends SwipeActivity {
         Pump2.setVisibility(View.INVISIBLE);
         Pump1.setEnabled(false);
         Pump1.setVisibility(View.INVISIBLE);
-
+        Log.d("key", key);
+        Log.d("user", user);
+        Log.d("ptindex", ptindex);
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users")
                 .child(key).child(user).child("careArea").child(ptindex);
         reference.addValueEventListener(new ValueEventListener() {
@@ -181,6 +184,7 @@ public class PumpActivity1 extends SwipeActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();
@@ -198,6 +202,7 @@ public class PumpActivity1 extends SwipeActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();
@@ -642,14 +647,16 @@ public class PumpActivity1 extends SwipeActivity {
 
     @Override
     protected void onSwipeLeft() {
-        Intent intent = new Intent(PumpActivity1.this, PumpActivity2.class);
-        intent.putExtra("Pump", Pumpp);
-        intent.putExtra("user", user);
-        intent.putExtra("key", key);
-        intent.putExtra("patients", patient);
-        intent.putExtra("ptindex", ptindex);
-        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(intent);
+        if (Pumps > 8) {
+            Intent intent = new Intent(PumpActivity1.this, PumpActivity2.class);
+            intent.putExtra("Pump", Pumpp);
+            intent.putExtra("user", user);
+            intent.putExtra("key", key);
+            intent.putExtra("patients", patient);
+            intent.putExtra("ptindex", ptindex);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+        }
 
     }
 }

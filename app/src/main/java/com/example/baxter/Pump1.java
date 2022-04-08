@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
@@ -187,6 +188,8 @@ ProgressBar pct;
                     Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     v.vibrate(1000); // 5000 miliseconds = 5 seconds
                 } else if (colors ==2){
+                    final MediaPlayer mp = MediaPlayer.create(Pump1.this, R.raw.med);
+                    mp.start();
                     Layout1.setBackgroundResource(R.color.orange);
                     AlertDialog alertDialog = new AlertDialog.Builder(Pump1.this).create();
                     alertDialog.setTitle("Alarm");
@@ -196,12 +199,15 @@ ProgressBar pct;
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();
                     Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     v.vibrate(3000); // 5000 miliseconds = 5 seconds
                 } else if (colors == 3){
+                    final MediaPlayer mp = MediaPlayer.create(Pump1.this, R.raw.hi);
+                    mp.start();
                     Layout1.setBackgroundResource(R.color.red);
                     AlertDialog alertDialog = new AlertDialog.Builder(Pump1.this).create();
                     alertDialog.setTitle("Alarm");
@@ -211,6 +217,7 @@ ProgressBar pct;
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();

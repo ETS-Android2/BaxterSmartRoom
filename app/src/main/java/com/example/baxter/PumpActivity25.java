@@ -106,7 +106,7 @@ public class PumpActivity25 extends SwipeActivity {
         key = grabdata.getStringExtra("key");
         ptindex = grabdata.getStringExtra("ptindex");
         int Pumps = Integer.parseInt(Pumpp);
-        if (Pumps/8<=3 ) {
+        if ((double)Pumps/8<=3 ) {
             fwdbutton.setEnabled(false);
             fwdbutton.setVisibility(View.GONE);
             pumpsthisact = Pumps-16;
@@ -123,13 +123,14 @@ public class PumpActivity25 extends SwipeActivity {
 
                 }
             });
-        } else if (Pumps/8<=4){
+        } else if ((double)Pumps/8<=4){
             pumpsthisact = 8;
             fwdbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(PumpActivity25.this, PumpActivity3.class);
                     intent.putExtra("user", user);
+                    intent.putExtra("Pump", Pumpp);
                     intent.putExtra("key", key);
                     intent.putExtra("patients", patient);
                     intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -259,6 +260,7 @@ public class PumpActivity25 extends SwipeActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();
@@ -276,6 +278,7 @@ public class PumpActivity25 extends SwipeActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();
@@ -293,7 +296,7 @@ public class PumpActivity25 extends SwipeActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (Pumps >= 1) {
+                if (pumpsthisact >= 1) {
                     Pump1drugstr = snapshot.child("17").child("drug").getValue().toString();
                     Pump1Ratestr = snapshot.child("17").child("currentRate").getValue().toString();
                     Pump1startVolumestr = snapshot.child("17").child("startVolume").getValue().toString();
@@ -303,7 +306,7 @@ public class PumpActivity25 extends SwipeActivity {
                     //data to pass on
                     alarm1 = snapshot.child("17").child("alarm").getValue().toString();
                     alarm_severity1 = snapshot.child("17").child("alarm_severity").getValue().toString();
-                    Pump1ID = snapshot.child("17").child("PumpID").getValue().toString();
+                    Pump1ID = snapshot.child("17").child("pumpID").getValue().toString();
                     alarm_text1 = snapshot.child("17").child("alarm_text").getValue().toString();
                     //setting colors
                     String color1 = snapshot.child("17").child("alarm_severity").getValue().toString();
@@ -320,7 +323,7 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump1.setEnabled(true);
                     Pump1.setVisibility(View.VISIBLE);
                 }
-                if (Pumps >= 2) {
+                if (pumpsthisact >= 2) {
                     Pump2drugstr = snapshot.child("18").child("drug").getValue(String.class);
                     Pump2Ratestr = snapshot.child("18").child("currentRate").getValue().toString();;
                     Pump2startVolumestr = snapshot.child("18").child("startVolume").getValue().toString();
@@ -329,7 +332,7 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump2startVolume.setText(Pump2startVolumestr);
                     alarm2 = snapshot.child("18").child("alarm").getValue().toString();;
                     alarm_severity2 = snapshot.child("18").child("alarm_severity").getValue().toString();;
-                    Pump2ID = snapshot.child("18").child("PumpID").getValue().toString();;
+                    Pump2ID = snapshot.child("18").child("pumpID").getValue().toString();;
                     alarm_text2 = snapshot.child("18").child("alarm_text").getValue(String.class);
                     String color2 = snapshot.child("18").child("alarm_severity").getValue().toString();
                     int colors2 = Integer.parseInt(color2);
@@ -346,7 +349,7 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump2.setVisibility(View.VISIBLE);
 
                 }
-                if (Pumps >= 3){
+                if (pumpsthisact >= 3){
                     Pump3drugstr = snapshot.child("19").child("drug").getValue(String.class);
                     Pump3Ratestr = snapshot.child("19").child("currentRate").getValue().toString();;
                     Pump3startVolumestr = snapshot.child("19").child("startVolume").getValue().toString();
@@ -355,7 +358,7 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump3startVolume.setText(Pump3startVolumestr);
                     alarm3 = snapshot.child("19").child("alarm").getValue().toString();;
                     alarm_severity3 = snapshot.child("19").child("alarm_severity").getValue().toString();;
-                    Pump3ID = snapshot.child("19").child("PumpID").getValue().toString();;
+                    Pump3ID = snapshot.child("19").child("pumpID").getValue().toString();;
                     alarm_text3 = snapshot.child("19").child("alarm_text").getValue(String.class);
                     String color3 = snapshot.child("19").child("alarm_severity").getValue().toString();
                     int colors3 = Integer.parseInt(color3);
@@ -371,7 +374,7 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump3.setEnabled(true);
                     Pump3.setVisibility(View.VISIBLE);
                 }
-                if (Pumps >= 4){
+                if (pumpsthisact >= 4){
                     String Pump4drugstr = snapshot.child("20").child("drug").getValue(String.class);
                     String Pump4Ratestr = snapshot.child("20").child("currentRate").getValue().toString();
                     String Pump4startVolumestr = snapshot.child("20").child("startVolume").getValue().toString();
@@ -380,7 +383,7 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump4startVolume.setText(Pump4startVolumestr);
                     alarm4 = snapshot.child("20").child("alarm").getValue().toString();;
                     alarm_severity4 = snapshot.child("20").child("alarm_severity").getValue().toString();;
-                    Pump4ID = snapshot.child("20").child("PumpID").getValue().toString();;
+                    Pump4ID = snapshot.child("20").child("pumpID").getValue().toString();;
                     alarm_text4 = snapshot.child("20").child("alarm_text").getValue(String.class);
                     String color4 = snapshot.child("20").child("alarm_severity").getValue().toString();
                     int colors4 = Integer.parseInt(color4);
@@ -398,7 +401,7 @@ public class PumpActivity25 extends SwipeActivity {
 
 
                 }
-                if (Pumps >= 5){
+                if (pumpsthisact>= 5){
                     String color5 = snapshot.child("21").child("alarm_severity").getValue().toString();
                     int colors5 = Integer.parseInt(color5);
                     if (colors5 == 1) {
@@ -421,10 +424,10 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump5startVolume.setText(Pump5startVolumestr);
                     alarm5 = snapshot.child("21").child("alarm").getValue().toString();;
                     alarm_severity5 = snapshot.child("21").child("alarm_severity").getValue().toString();;
-                    Pump5ID = snapshot.child("21").child("PumpID").getValue().toString();;
+                    Pump5ID = snapshot.child("21").child("pumpID").getValue().toString();;
                     alarm_text5 = snapshot.child("21").child("alarm_text").getValue(String.class);
                 }
-                if (Pumps >= 6) {
+                if (pumpsthisact >= 6) {
                     String color6 = snapshot.child("22").child("alarm_severity").getValue().toString();
                     int colors6 = Integer.parseInt(color6);
                     if (colors6 == 1) {
@@ -447,10 +450,10 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump6startVolume.setText(Pump6startVolumestr);
                     alarm6 = snapshot.child("22").child("alarm").getValue().toString();;
                     alarm_severity6 = snapshot.child("22").child("alarm_severity").getValue().toString();;
-                    Pump6ID = snapshot.child("22").child("PumpID").getValue().toString();;
+                    Pump6ID = snapshot.child("22").child("pumpID").getValue().toString();;
                     alarm_text6 = snapshot.child("22").child("alarm_text").getValue(String.class);
                 }
-                if (Pumps >= 7){
+                if (pumpsthisact >= 7){
                     String color7 = snapshot.child("23").child("alarm_severity").getValue().toString();
                     int colors7 = Integer.parseInt(color7);
                     if (colors7 == 1) {
@@ -470,13 +473,13 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump7startVolume.setText(Pump7startVolumestr);
                     alarm7 = snapshot.child("23").child("alarm").getValue().toString();;
                     alarm_severity7 = snapshot.child("23").child("alarm_severity").getValue().toString();;
-                    Pump7ID = snapshot.child("23").child("PumpID").getValue().toString();;
+                    Pump7ID = snapshot.child("23").child("pumpID").getValue().toString();;
                     alarm_text7 = snapshot.child("23").child("alarm_text").getValue(String.class);
                     Pump7.setEnabled(true);
                     Pump7.setVisibility(View.VISIBLE);
 
                 }
-                if (Pumps >= 8) {
+                if (pumpsthisact>= 8) {
                     String color8 = snapshot.child("24").child("alarm_severity").getValue().toString();
                     int colors8 = Integer.parseInt(color8);
                     if (colors8 == 1) {
@@ -496,7 +499,7 @@ public class PumpActivity25 extends SwipeActivity {
                     Pump8startVolume.setText(Pump8startVolumestr);
                     alarm8 = snapshot.child("24").child("alarm").getValue().toString();;
                     alarm_severity8 = snapshot.child("24").child("alarm_severity").getValue().toString();;
-                    Pump8ID = snapshot.child("24").child("PumpID").getValue().toString();;
+                    Pump8ID = snapshot.child("24").child("pumpID").getValue().toString();;
                     alarm_text8 = snapshot.child("24").child("alarm_text").getValue(String.class);
                     Pump8.setEnabled(true);
                     Pump8.setVisibility(View.VISIBLE);
@@ -684,6 +687,8 @@ public class PumpActivity25 extends SwipeActivity {
                 intent.putExtra("patients", patient);
                 intent.putExtra("user", user);
                 intent.putExtra("key", key);
+                intent.putExtra("ptindex", ptindex);
+                intent.putExtra("Pump", Pumpp);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();

@@ -461,7 +461,7 @@ public class PatientActivity1 extends SwipeActivity {
                 intent.putExtra("user",user);
                 intent.putExtra("key",key);
                 intent.putExtra("patients", patient);
-                intent.putExtra("ptindex",8);
+                intent.putExtra("ptindex","8");
                 intent.putExtra("Pump",pump8);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);

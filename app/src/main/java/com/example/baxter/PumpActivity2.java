@@ -208,6 +208,7 @@ int pumpsthisact, Pumps;
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();
@@ -224,6 +225,7 @@ int pumpsthisact, Pumps;
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();

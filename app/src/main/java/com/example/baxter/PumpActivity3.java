@@ -30,7 +30,7 @@ public class PumpActivity3 extends SwipeActivity {
     String ptindex, patient, Pumpp, user, key, alarm1, alarm_severity1, alarm_text1, Pump1drugstr, Pump1Ratestr, Pump1startVolumestr, Pump1ID,
             alarm2, alarm_severity2, alarm_text2, Pump2drugstr, Pump2Ratestr, Pump2startVolumestr, Pump2ID, alarm3, alarm_severity3, alarm_text3, Pump3drugstr, Pump3Ratestr, Pump3startVolumestr, Pump3ID, alarm4, alarm_severity4, alarm_text4, Pump4drugstr, Pump4Ratestr, Pump4startVolumestr, Pump4ID, alarm5, alarm_severity5, alarm_text5, Pump5drugstr, Pump5Ratestr, Pump5startVolumestr, Pump5ID, alarm6, alarm_severity6, alarm_text6, Pump6drugstr, Pump6Ratestr, Pump6startVolumestr, Pump6ID, alarm7, alarm_severity7, alarm_text7, Pump7drugstr, Pump7Ratestr, Pump7startVolumestr, Pump7ID, alarm8, alarm_severity8, alarm_text8, Pump8drugstr, Pump8Ratestr, Pump8startVolumestr, Pump8ID;
 
-    int Pumps, Pumpthisact, Pumpsdisplayed;
+    int Pumps, pumpthisact, Pumpsdisplayed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,12 +88,11 @@ public class PumpActivity3 extends SwipeActivity {
         homebutton = findViewById(R.id.HomeButton);
         backbutton = findViewById(R.id.BackButton);
         Intent grabdata = getIntent();
-        Pumpp = grabdata.getStringExtra("Pumps");
+        Pumpp = grabdata.getStringExtra("Pump");
         user = grabdata.getStringExtra("user");
         patient = grabdata.getStringExtra("patients");
         ptindex = grabdata.getStringExtra("ptindex");
-        key = grabdata.getStringExtra("key");
-        Pumpthisact = Pumps - 24;
+        pumpthisact = Pumps - 24;
         Pumps = Integer.parseInt(Pumpp);
         homebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,14 +100,12 @@ public class PumpActivity3 extends SwipeActivity {
                 Intent intent = new Intent(PumpActivity3.this, PumpActivity1.class);
                 intent.putExtra("user", user);
                 intent.putExtra("key", key);
-                intent.putExtra("Pumps", Pumpp);
+                intent.putExtra("Pump", Pumpp);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
             }
         });
-
-            Pumpthisact = Pumps-24;
 
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +113,7 @@ public class PumpActivity3 extends SwipeActivity {
                 Intent intent = new Intent(PumpActivity3.this, PumpActivity25.class);
                 intent.putExtra("user", user);
                 intent.putExtra("key", key);
-                intent.putExtra("Pumps", Pumpp);
+                intent.putExtra("Pump", Pumpp);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();
@@ -186,6 +183,7 @@ public class PumpActivity3 extends SwipeActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();
@@ -203,6 +201,7 @@ public class PumpActivity3 extends SwipeActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             dialog.dismiss();
+                            mp.stop();
                         }
                     });
                     alertDialog.show();
@@ -220,7 +219,7 @@ public class PumpActivity3 extends SwipeActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (Pumps >= 1) {
+                if (pumpthisact >= 1) {
                     Pump1drugstr = snapshot.child("25").child("drug").getValue().toString();
                     Pump1Ratestr = snapshot.child("25").child("currentRate").getValue().toString();
                     Pump1startVolumestr = snapshot.child("25").child("startVolume").getValue().toString();
@@ -247,7 +246,7 @@ public class PumpActivity3 extends SwipeActivity {
                     Pump1.setEnabled(true);
                     Pump1.setVisibility(View.VISIBLE);
                 }
-                if (Pumps >= 2) {
+                if (pumpthisact >= 2) {
                     Pump2drugstr = snapshot.child("26").child("drug").getValue(String.class);
                     Pump2Ratestr = snapshot.child("26").child("currentRate").getValue().toString();
                     ;
@@ -277,7 +276,7 @@ public class PumpActivity3 extends SwipeActivity {
                     Pump2.setVisibility(View.VISIBLE);
 
                 }
-                if (Pumps >= 3) {
+                if (pumpthisact >= 3) {
                     Pump3drugstr = snapshot.child("27").child("drug").getValue(String.class);
                     Pump3Ratestr = snapshot.child("27").child("currentRate").getValue().toString();
                     ;
@@ -306,7 +305,7 @@ public class PumpActivity3 extends SwipeActivity {
                     Pump3.setEnabled(true);
                     Pump3.setVisibility(View.VISIBLE);
                 }
-                if (Pumps >= 4) {
+                if (pumpthisact >= 4) {
                     String Pump4drugstr = snapshot.child("28").child("drug").getValue(String.class);
                     String Pump4Ratestr = snapshot.child("28").child("currentRate").getValue().toString();
                     String Pump4startVolumestr = snapshot.child("28").child("startVolume").getValue().toString();
@@ -336,7 +335,7 @@ public class PumpActivity3 extends SwipeActivity {
 
 
                 }
-                if (Pumps >= 5) {
+                if (pumpthisact >= 5) {
                     String color5 = snapshot.child("29").child("alarm_severity").getValue().toString();
                     int colors5 = Integer.parseInt(color5);
                     if (colors5 == 1) {
@@ -366,7 +365,7 @@ public class PumpActivity3 extends SwipeActivity {
                     ;
                     alarm_text5 = snapshot.child("29").child("alarm_text").getValue(String.class);
                 }
-                if (Pumps >= 6) {
+                if (pumpthisact >= 6) {
                     String color6 = snapshot.child("30").child("alarm_severity").getValue().toString();
                     int colors6 = Integer.parseInt(color6);
                     if (colors6 == 1) {
@@ -396,7 +395,7 @@ public class PumpActivity3 extends SwipeActivity {
                     ;
                     alarm_text6 = snapshot.child("30").child("alarm_text").getValue(String.class);
                 }
-                if (Pumps >= 7) {
+                if (pumpthisact >= 7) {
                     String color7 = snapshot.child("31").child("alarm_severity").getValue().toString();
                     int colors7 = Integer.parseInt(color7);
                     if (colors7 == 1) {
@@ -426,7 +425,7 @@ public class PumpActivity3 extends SwipeActivity {
                     Pump7.setVisibility(View.VISIBLE);
 
                 }
-                if (Pumps >= 8) {
+                if (pumpthisact >= 8) {
                     String color8 = snapshot.child("32").child("alarm_severity").getValue().toString();
                     int colors8 = Integer.parseInt(color8);
                     if (colors8 == 1) {
@@ -473,7 +472,7 @@ public class PumpActivity3 extends SwipeActivity {
             Intent intent = new Intent(PumpActivity3.this, PumpActivity25.class);
             intent.putExtra("user", user);
             intent.putExtra("key", key);
-            intent.putExtra("Pumps", Pumps);
+            intent.putExtra("Pump", Pumps);
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
             finish();
