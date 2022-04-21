@@ -34,7 +34,18 @@
                     android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt1number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -46,10 +57,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
                             android:text="Pump 1 drug"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:scaleType="centerInside" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/Pump1Rate"
@@ -99,7 +110,18 @@
                     android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt2number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -171,7 +193,18 @@
                     android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt3number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -237,6 +270,18 @@
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
+                    <TextView
+                        android:id="@+id/pt4number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -309,7 +354,18 @@
                     android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt5number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -375,6 +431,18 @@
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
+                    <TextView
+                        android:id="@+id/pt6number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -447,7 +515,18 @@
                     android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt7number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -485,6 +564,7 @@
                             android:text="Pump 7 startVolume"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+
                         <ProgressBar
                             android:id="@+id/pct7"
                             style="@android:style/Widget.ProgressBar.Horizontal"
@@ -495,8 +575,8 @@
                             android:layout_marginStart="5dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
-                            android:layout_marginRight="10dp"
                             android:layout_marginEnd="5dp"
+                            android:layout_marginRight="10dp"
                             android:layout_marginBottom="5dp"
                             android:progress="0" />
 
@@ -512,7 +592,18 @@
                     android:background="@color/green"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt8number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

@@ -21,20 +21,29 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
                 android:layout_weight="1">
 
                 <RelativeLayout
                     android:id="@+id/Patient1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
                     android:layout_weight="0.60"
-                    android:background="@color/blue"
+                    android:background="@color/darkblue"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt1number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -47,7 +56,7 @@
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:scaleType="centerInside"
-                            android:text="Patient 1 Name"
+                            android:text="Patient 5 Name"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -58,7 +67,7 @@
                             android:layout_below="@+id/pt1name"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 1 Age"
+                            android:text="Patient 2 Age"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -69,7 +78,7 @@
                             android:layout_below="@+id/pt1age"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 1 Sex"
+                            android:text="Patient 2 Sex"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -83,7 +92,6 @@
                             android:text="Patient 1 ID"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
-
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -93,10 +101,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.60"
-                    android:background="@color/green"
+                    android:background="@color/orange"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt2number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -109,7 +128,7 @@
                             android:layout_centerHorizontal="true"
                             android:adjustViewBounds="true"
                             android:scaleType="centerInside"
-                            android:text="Patient 2 Name"
+                            android:text="Patient 6 Name"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -120,7 +139,7 @@
                             android:layout_below="@+id/pt2name"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 2 Age"
+                            android:text="Patient 6 Age"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -131,7 +150,7 @@
                             android:layout_below="@+id/pt2age"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:text="Patient 2 Sex"
+                            android:text="Patient 6 Sex"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -145,6 +164,7 @@
                             android:text="Patient 1 ID"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -166,6 +186,18 @@
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
 
+                    <TextView
+                        android:id="@+id/pt3number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -226,7 +258,18 @@
                     android:background="@color/violet"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt4number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -295,7 +338,18 @@
                     android:background="@color/darkblue"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt5number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -356,7 +410,18 @@
                     android:background="@color/orange"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt6number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -426,7 +491,18 @@
                     android:background="@color/yellow"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt7number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -487,7 +563,18 @@
                     android:background="@color/teal"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground">
-
+                    <TextView
+                        android:id="@+id/pt8number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:text="Patient 1 Name"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

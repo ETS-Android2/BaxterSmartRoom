@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PatientActivity2 extends SwipeActivity {
     RelativeLayout Patient1, Patient2, Patient3, Patient4, Patient5, Patient6, Patient7, Patient8;
-    TextView pt1age,pt1name,pt1sex,pt2age,pt2name,pt2sex,pt5age,pt5name,pt5sex,pt3age,pt3name,pt3sex,
+    TextView pt1number,pt2number,pt3number,pt4number,pt5number,pt6number,pt7number,pt8number, pt1age,pt1name,pt1sex,pt2age,pt2name,pt2sex,pt5age,pt5name,pt5sex,pt3age,pt3name,pt3sex,
             pt4age,pt4name,pt4sex,pt6age,pt6name,pt6sex,pt7age,pt7name,pt7sex,pt8age,pt8name,pt8sex, pt1ID, pt2ID, pt3ID, pt4ID, pt5ID, pt6ID, pt7ID, pt8ID;
     String patient, user, key, pump1,pump2,pump3,pump4,pump5,pump6,pump7,pump8;
     Button fwdbutton, backbutton, homebutton;
@@ -37,6 +37,14 @@ public class PatientActivity2 extends SwipeActivity {
             Patient6 = findViewById(R.id.Patient6);
             Patient7 = findViewById(R.id.Patient7);
             Patient8 = findViewById(R.id.Patient8);
+            pt1number=findViewById(R.id.pt1number);
+            pt2number=findViewById(R.id.pt2number);
+            pt3number=findViewById(R.id.pt3number);
+            pt4number=findViewById(R.id.pt4number);
+            pt5number=findViewById(R.id.pt5number);
+            pt6number=findViewById(R.id.pt6number);
+            pt7number=findViewById(R.id.pt7number);
+            pt8number=findViewById(R.id.pt8number);
             pt1age = findViewById(R.id.pt1age);
             pt2age = findViewById(R.id.pt2age);
             pt3age = findViewById(R.id.pt3age);
@@ -141,7 +149,8 @@ public class PatientActivity2 extends SwipeActivity {
                         String pt1IDstr = snapshot.child("9").child("patientID").getValue().toString();
                         pt1ID.setText("Patient ID: "+pt1IDstr);
                         String pt1namestr = snapshot.child("9").child("name").getValue().toString();
-                        ;
+                        String pt1numberstr = snapshot.child("9").child("roomnumber").getValue().toString();
+                        pt1number.setText(pt1numberstr);
                         String pt1agestr = snapshot.child("9").child("age").getValue().toString();
                         String pt1sexstr = snapshot.child("9").child("sex").getValue().toString();
                         String maxSeverity = snapshot.child("9").child("maxSeverity").getValue().toString();
@@ -166,7 +175,8 @@ public class PatientActivity2 extends SwipeActivity {
                         String pt1IDstr = snapshot.child("10").child("patientID").getValue().toString();
                         pt2ID.setText("Patient ID: "+pt1IDstr);
                         String pt2namestr = snapshot.child("10").child("name").getValue().toString();
-                        ;
+                        String pt2numberstr = snapshot.child("10").child("roomnumber").getValue().toString();
+                        pt2number.setText(pt2numberstr);
                         String pt2agestr = snapshot.child("10").child("age").getValue().toString();
                         String pt2sexstr = snapshot.child("10").child("sex").getValue().toString();
                         ;
@@ -195,7 +205,8 @@ public class PatientActivity2 extends SwipeActivity {
                         ;
                         String pt3agestr = snapshot.child("11").child("age").getValue().toString();
                         String pt3sexstr = snapshot.child("11").child("sex").getValue().toString();
-                        ;
+                        String pt3numberstr = snapshot.child("11").child("roomnumber").getValue().toString();
+                        pt3number.setText(pt3numberstr);
                         pt3age.setText(pt3agestr);
                         pt3name.setText(pt3namestr);
                         pt3sex.setText(pt3sexstr);
@@ -222,7 +233,8 @@ public class PatientActivity2 extends SwipeActivity {
                         ;
                         String pt4agestr = snapshot.child("12").child("age").getValue().toString();
                         String pt4sexstr = snapshot.child("12").child("sex").getValue().toString();
-                        ;
+                        String pt4numberstr = snapshot.child("12").child("roomnumber").getValue().toString();
+                        pt4number.setText(pt4numberstr);
                         pt4age.setText(pt4agestr);
                         pt4name.setText(pt4namestr);
                         pt4sex.setText(pt4sexstr);
@@ -245,7 +257,8 @@ public class PatientActivity2 extends SwipeActivity {
                         String pt1IDstr = snapshot.child("13").child("patientID").getValue().toString();
                         pt5ID.setText("Patient ID: "+pt1IDstr);
                         String pt5namestr = snapshot.child("13").child("name").getValue().toString();
-                        ;
+                        String pt5numberstr = snapshot.child("13").child("roomnumber").getValue().toString();
+                        pt5number.setText(pt5numberstr);
                         String pt5agestr = snapshot.child("13").child("age").getValue().toString();
                         String pt5sexstr = snapshot.child("13").child("sex").getValue().toString();
                         ;
@@ -271,7 +284,8 @@ public class PatientActivity2 extends SwipeActivity {
                         String pt1IDstr = snapshot.child("14").child("patientID").getValue().toString();
                         pt6ID.setText("Patient ID: "+pt1IDstr);
                         String pt6namestr = snapshot.child("14").child("name").getValue().toString();
-                        ;
+                        String pt6numberstr = snapshot.child("14").child("roomnumber").getValue().toString();
+                        pt6number.setText(pt6numberstr);
                         String pt6agestr = snapshot.child("14").child("age").getValue().toString();
                         String pt6sexstr = snapshot.child("14").child("sex").getValue().toString();
                         ;
@@ -300,7 +314,8 @@ public class PatientActivity2 extends SwipeActivity {
                         ;
                         String pt7agestr = snapshot.child("15").child("age").getValue().toString();
                         String pt7sexstr = snapshot.child("15").child("sex").getValue().toString();
-                        ;
+                        String pt7numberstr = snapshot.child("15").child("roomnumber").getValue().toString();
+                        pt7number.setText(pt7numberstr);
                         pt7age.setText(pt7agestr);
                         pt7name.setText(pt7namestr);
                         pump7 = snapshot.child("15").child("n_pumps").getValue().toString();
@@ -327,7 +342,8 @@ public class PatientActivity2 extends SwipeActivity {
                         ;
                         String pt8agestr = snapshot.child("16").child("age").getValue().toString();
                         String pt8sexstr = snapshot.child("16").child("sex").getValue().toString();
-                        ;
+                        String pt8numberstr = snapshot.child("16").child("roomnumber").getValue().toString();
+                        pt8number.setText(pt8numberstr);
                         pt8age.setText(pt8agestr);
                         pump8 = snapshot.child("16").child("n_pumps").getValue().toString();
                         Patient8.setEnabled(true);

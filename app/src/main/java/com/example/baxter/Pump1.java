@@ -30,7 +30,7 @@ public class Pump1 extends AppCompatActivity {
     String pindexx, patient, user, key, ptindexx, Pump, rate, colorss;
     Button homebutton, backbutton;
     RelativeLayout Layout1;
-    TextView timeleft, endtime, volumeleft, drugg, ratee, startVolumel, IDD, alarmtext;
+    TextView pumpnumber, timeleft, endtime, volumeleft, drugg, ratee, startVolumel, IDD, alarmtext;
     Spinner dynamicspinner;
     int selected, ptindex, pindex;
     String[] paths = {"Select Pump","Pump 1", "Pump 2", "Pump 3", "Pump 4", "Pump 5", "Pump 6", "Pump 7", "Pump 8"};
@@ -44,6 +44,7 @@ ProgressBar pct;
         backbutton = findViewById(R.id.BackButton);
         drugg = findViewById(R.id.drug);
         ratee = findViewById(R.id.rate);
+        pumpnumber=findViewById(R.id.pumpnumber);
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference usersRef = rootRef.child("users");
         ValueEventListener valueEventListener = new ValueEventListener() {
@@ -101,6 +102,8 @@ ProgressBar pct;
     private void data() {
         Intent grabdata = getIntent();
         user = grabdata.getStringExtra("user");
+        String number = grabdata.getStringExtra("pumpnumber");
+        pumpnumber.setText(number);
         ptindexx = grabdata.getStringExtra("ptindex");
         patient = grabdata.getStringExtra("patients");
         String alarm = grabdata.getStringExtra("alarm");
