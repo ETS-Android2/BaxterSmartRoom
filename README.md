@@ -15,7 +15,11 @@ To run this infusion pump simulation, you must first synthesize the data. Go to 
 
 We have already written a script that calls this function, processes the data, and uploads a JSON file to Google Firebase, a JSON file which the front-end of the app will use. This script is `combine_V2.py`. At this point in the instructions, run the script `combine_V2.py`.
 
-Now, a JSON file has been generated and the Android app has data to query. Switch to the `fronend` branch of this repository.
+Now, a JSON file has been generated and the Android app has data to query. Switch to the `fronend` branch of this repository. Download the repository and move it into your Android Studio directory. Launch Android Studio and change your directory to the folder you just downloaded. Send the Android application to your Android tablet or run a virtual Android device on your computer.
+
+In your Android device, launch the application called "Baxter Smart Room." You will see the app populated with your user-defined data synthesis. Now, switch to the `PCapp` branch of this repository and run the file `simulate_V2.py`.
+
+This script, `simulate_V2.py`, adds time-dependence on the simulation. The `combine_V2.py` is not time dependent.
 
 ## References
 [1] Hravnak, Marilyn, et al. "A call to alarms: Current state and future directions in the battle against alarm fatigue." Journal of electrocardiology 51.6 (2018): S44-S48.
