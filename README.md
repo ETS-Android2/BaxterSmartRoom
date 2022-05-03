@@ -11,6 +11,7 @@ Here, we define the main problems of infusion pumps:
 We broke our engineering team into two parts: the back-end and front-end team. The back-end consists of three main sections: the data synthesis script, the back-end pipeline script, and the simulation script. The front-end consists of the Android application.
 
 ## Instructions
+Back-end and data generation
 To run this infusion pump simulation, you must first synthesize the data. Go to the `PCapp` branch of this repository. The script `synthesize.py` has a fuction defined that synthesizes the files `emr.csv` and `pumps.csv`. This function can be called by the user to synthesize data at user-defined parameters (such as number of pumps per patient, probability of alarm, etc.).
 
 We have already written a script that calls this function, processes the data, and uploads a JSON file to Google Firebase, a JSON file which the front-end of the app will use. This script is `combine_V2.py`. At this point in the instructions, run the script `combine_V2.py`.
@@ -19,8 +20,14 @@ We have already written a script that calls this function, processes the data, a
 Figure 1: Google Firebase as a server for our back-end data
 <br />
 <br />
+Front-end
+Now, a JSON file has been generated and the Android app has data to query. Switch to the `fronend` branch of this repository. You have 2 options to run this application. If you just want to test the app and see how it runs, download BaxterSmartRoom.apk and install the application via apk. Instructions to install via apk are as follows:
+1. Download the APK you want to install.
+2. You can either navigate to your Download folder using a file browser app or simply begin the install by clicking on the completed download in your mobile browser.
+3. Android will ask you to grant permission to either the file browser or your web browser to install the app. Grant the permission and it should bounce you back to the installation screen. If not, navigate back to your Download folder after granting the permission to try again.
+4.The app should be safely installed.
 
-Now, a JSON file has been generated and the Android app has data to query. Switch to the `fronend` branch of this repository. Download the repository and move it into your Android Studio directory. Launch Android Studio and change your directory to the folder you just downloaded. Send the Android application to your Android tablet or run a virtual Android device on your computer.
+If you would like to make edits to the code and run the app on debug mode, download the repository and move it into your Android Studio directory. Launch Android Studio and change your directory to the folder you just downloaded. Send the Android application to your Android tablet or run a virtual Android device on your computer.
 
 <img width="400" alt="Screen Shot 2022-05-03 at 12 36 19 PM" src="https://user-images.githubusercontent.com/59581492/166499087-79329bb3-a1f9-487b-9262-bd9e31efce40.png">
 Figure 2: Android app functionality diagram
