@@ -10,25 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Baxter">
         <activity
-            android:name=".PumpActivity3"
+            android:name="com.example.baxter.PumpActivity3"
             android:exported="false" />
         <activity
-            android:name=".PumpActivity25"
+            android:name="com.example.baxter.PumpActivity25"
             android:exported="false" />
         <activity
-            android:name=".PatientActivity25"
+            android:name="com.example.baxter.PatientActivity25"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name="com.example.baxter.Login"
             android:exported="false" />
         <activity
-            android:name=".PatientActivity3"
+            android:name="com.example.baxter.PatientActivity3"
             android:exported="false" />
         <activity
-            android:name=".PatientActivity2"
+            android:name="com.example.baxter.PatientActivity2"
             android:exported="false" />
         <activity
-            android:name=".Splash"
+            android:name="com.example.baxter.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,16 +38,16 @@
         </activity>
 
         <activity
-            android:name=".PatientActivity1"
+            android:name="com.example.baxter.PatientActivity1"
             android:exported="false" />
         <activity
-            android:name=".PumpActivity2"
+            android:name="com.example.baxter.PumpActivity2"
             android:exported="false" />
         <activity
-            android:name=".Pump1"
+            android:name="com.example.baxter.Pump1"
             android:exported="false" />
         <activity
-            android:name=".PumpActivity1"
+            android:name="com.example.baxter.PumpActivity1"
             android:exported="false" />
     </application>
 
