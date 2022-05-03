@@ -1,0 +1,30 @@
+drug,highRiskMed,maxRate
+Morphine Sulfate 1mg/1mL,1,0.15
+Naloxone 0.4mg/1mL,0,0.16
+Rocuronium 1mg/1mL,1,0.72
+Nitroglycerin 100mg/250mL,0,0.06
+Propofol 10mg/1mL,0,3
+Vecuronium 1mg/1mL,1,0.2
+Acetylcysteine 30mg/1mL,0,7.5
+Azithromycin 2mg/1mL,0,2
+Cisatricurim 40mg/100mL,1,0.6
+Fentanyl 2mg/100mL,1,0.003
+Acetazolamide 100mg/1mL,0,25
+Acyclovir 5mg/1mL,0,5
+Albumin 50mg/1mL,0,0.5
+Albumin 250mg/mL,0,0.25
+Amikacin 5mg/1mL,0,5
+Amiodarone 3mg/1mL,0,0.015
+Ampicillin 20mg/1mL,0,10
+Bumetanide 0.25mg/1mL,0,60
+Cefepine 20mg/1mL,0,0.5
+Clindamycin 18mg/1mL,0,1
+Diazepam 5mg/1mL,0,0.6
+Dopamine 400mg/250mL,0,0.6
+Epinephrine 4mg/250mL,0,0.01
+Fluconazole 2mg/1mL,0,0.5
+Gentamicin 2mg/1mL,0,0.3
+Levetiracetam 5mg/1mL,0,5
+Levofloxacin 5mg/1mL,0,0.4
+Meperidine 10mg/1mL,1,0.25
+Succinylcholine 20mg/1mL,1,0.6

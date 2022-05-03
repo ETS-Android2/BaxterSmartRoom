@@ -10,6 +10,12 @@ def get_index(i, data, user, care_area, emr_room):
 
     return pump_ind
 
+def countX(lst, x):
+    count = 0
+    for ele in lst:
+        if (ele == x):
+            count = count + 1
+    return count
 
 def function(user, name):
 

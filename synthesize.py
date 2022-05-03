@@ -6,8 +6,7 @@ import json
 # define synthesize()
 # ------------------------------------------------------------------------------
 
-def synthesize(p_of_alarm = 0.3, n_care_areas=1, n_patients=25,
-    avgPumpsPerPatient=4):
+def synthesize(p_of_alarm = 0.3, n_care_areas=1, n_patients=25, avgPumpsPerPatient=4):
     '''
     p_of alarm must be a value between 0 and 1
     '''

@@ -60,6 +60,7 @@ def function(user, name):
                                 data[user]["careArea"][int(emr.room[i])]["maxSeverity"] = severity
 
                             data[user]["careArea"][int(emr.room[i])]["Pumps"][pump_ind] = {
+                            "pumpnumber" : str(pump_ind),
                             "pumpID" : int(pumps.pumpID[i]),
                             "drug" : pumps.drug[i],
                             "currentRate" : str(float(pumps.currentRate[i])) + " mg/min",
@@ -74,6 +75,7 @@ def function(user, name):
                             }
                     else:
                         data[user]["careArea"][int(emr.room[i])] = {
+                        "roomnumber" : str(int(emr.room[i])),
                         "maxSeverity" : 0, #THIS WORKS. IT'S JUST PREALLOCATION
                         "maxSevPumps" : "",
                         "patientID" : int(emr.patientID[i]),

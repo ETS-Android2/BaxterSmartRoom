@@ -1,0 +1,32 @@
+code,description,clinicallyActionable,highRisk
+0,No alarm,-1,-1
+1000,System error,1,1
+1001,Depleted battery,1,1
+1002,Improper shutdown,0,0
+1003,Door not fully latched,1,0
+1004,Tube load error,1,0
+1008,Door open while pump running,1,0
+1009,Slide clamp detected,0,0
+1010,Insert slide clamp,0,0
+1011,Remove primary clamp,0,0
+1012,Infusion complete,1,0
+1013,Secondary complete,1,0
+1014,Flush complete,1,0
+1016,Downstream occlusion,1,1
+1017,Upstream occlusion,1,1
+1018,Air in line,0,0
+1019,Air still detected,1,1
+1020,Max air detected,1,1
+1021,Value entry timeout,0,0
+1022,Remove clamp,0,0
+1023,Very low battery,1,1
+1024,Battery error,1,1
+1025,Check battery,1,0
+1026,Close door to power off,0,0
+1027,Low battery,0,0
+1028,Bag near empty,0,0
+1030,Inactivity,0,0
+1031,Unable to run,1,1
+1032,Non interrupting system error,0,0
+1033,Standby complete,0,0
+999,Max infusion rate exceeded,1,1
