@@ -1,6 +1,6 @@
 # BaxterSmartRoom
 ## Problem Statement
-This is the code repository for the Baxter Smart Room team as part of the senior design project for the 2021-2022 at the University of Rochester. We have designed a prototype Android application that  adresses common infusion pump problems.
+This is the code repository for the Baxter Smart Room team as part of the senior design project for the 2021-2022 at the University of Rochester. We have designed a prototype Android application that adresses common infusion pump problems.
 
 Here, we define the main problems of infusion pumps:
 * Infusion pump induced alarm fatigue is a significant problem in the clinic [1]
