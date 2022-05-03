@@ -19,7 +19,7 @@ Now, a JSON file has been generated and the Android app has data to query. Switc
 
 In your Android device, launch the application called "Baxter Smart Room." You will see the app populated with your user-defined data synthesis. Now, switch to the `PCapp` branch of this repository and run the file `simulate_V2.py`.
 
-This script, `simulate_V2.py`, adds time-dependence on the simulation. The `combine_V2.py` is not time dependent.
+This script, `simulate_V2.py`, adds time-dependence on the simulation. `combine_V2.py` is not time dependent. Running `simulate_V2.py` results in the infusion progressing overtime, and these changes are made on Firebase as part of the back-end. These changes can be observed on the front-end via the text displayed and the progress bar.
 
 ## References
 [1] Hravnak, Marilyn, et al. "A call to alarms: Current state and future directions in the battle against alarm fatigue." Journal of electrocardiology 51.6 (2018): S44-S48.
