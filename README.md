@@ -8,6 +8,7 @@ Here, we define the main problems of infusion pumps:
 * There is a lack of sufficient communication between the smart pumps and the electronic medical record (EMR)
 
 ## Design
+We broke our engineering team into two parts: the back-end and front-end team.
 
 ## References
 [1] Hravnak, Marilyn, et al. "A call to alarms: Current state and future directions in the battle against alarm fatigue." Journal of electrocardiology 51.6 (2018): S44-S48.
