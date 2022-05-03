@@ -11,7 +11,7 @@ Here, we define the main problems of infusion pumps:
 We broke our engineering team into two parts: the back-end and front-end team. The back-end consists of three main sections: the data synthesis script, the back-end pipeline script, and the simulation script. The front-end consists of the Android application.
 
 ## Instructions
-To run this infusion pump simulation, you must first synthesize the data.
+To run this infusion pump simulation, you must first synthesize the data. Go to the PCapp branch of this repository. The script `synthesize.py` has a fuction defined that synthesizes the files `emr.csv` and `pumps.csv`.
 
 ## References
 [1] Hravnak, Marilyn, et al. "A call to alarms: Current state and future directions in the battle against alarm fatigue." Journal of electrocardiology 51.6 (2018): S44-S48.
