@@ -20,7 +20,7 @@ Figure 1: Google Firebase as a server for our back-end data
 <br />
 <br />
 
-Now, a JSON file has been generated and the Android app has data to query. Switch to the `fronend` branch of this repository. Download the repository and move it into your Android Studio directory. Launch Android Studio and change your directory to the folder you just downloaded. Send the Android application to your Android tablet or run a virtual Android device on your computer.
+Now, a JSON file has been generated and the Android app has data to query. Switch to the `frontend` branch of this repository. Download the repository and move it into your Android Studio directory. Launch Android Studio and change your directory to the folder you just downloaded. Send the Android application to your Android tablet or run a virtual Android device on your computer.
 
 <img width="400" alt="Screen Shot 2022-05-03 at 12 36 19 PM" src="https://user-images.githubusercontent.com/59581492/166499087-79329bb3-a1f9-487b-9262-bd9e31efce40.png">
 Figure 2: Android app functionality diagram
