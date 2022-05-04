@@ -21,7 +21,7 @@ Figure 1: Google Firebase as a server for our back-end data
 <br />
 <br />
 Front-end
-Now, a JSON file has been generated and the Android app has data to query. Switch to the `fronend` branch of this repository. You have 2 options to run this application. If you just want to test the app and see how it runs, download BaxterSmartRoom.apk and install the application via apk. Instructions to install via apk are as follows:
+Now, a JSON file has been generated and the Android app has data to query. Switch to the `frontend` branch of this repository. You have 2 options to run this application. If you just want to test the app and see how it runs, download BaxterSmartRoom.apk and install the application via apk. Instructions to install via apk are as follows:
 1. Download the APK you want to install.
 2. You can either navigate to your Download folder using a file browser app or simply begin the install by clicking on the completed download in your mobile browser.
 3. Android will ask you to grant permission to either the file browser or your web browser to install the app. Grant the permission and it should bounce you back to the installation screen. If not, navigate back to your Download folder after granting the permission to try again.
